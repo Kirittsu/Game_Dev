@@ -9,6 +9,10 @@ namespace Game_Dev
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
+        private Texture2D _texture;
+        private Rectangle _deelRectangle;
+        private int schuifOp_X = 0;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -20,12 +24,16 @@ namespace Game_Dev
         {
             // TODO: Add your initialization logic here
 
+            _deelRectangle = new Rectangle(schuifOp_X,80, 16, 16);
+
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            _texture = Content.Load<Texture2D>("hero");
 
             // TODO: use this.Content to load your game content here
         }
@@ -45,6 +53,22 @@ namespace Game_Dev
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+
+            //_spriteBatch.Begin en .End moeten altijd staan als je sprites tekent, PointClamp MOET BLIJVEN! (zorgt dat het niet blurry is)
+            _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+
+            //.Draw -> _texture = texture, Vector2 is positie, _deelRectangle pakt stuk uit spritesheet, Color.White MOET!
+            _spriteBatch.Draw(_texture,new Vector2(10,10), _deelRectangle, Color.White, 0, new Vector2(1,1), new Vector2(8,8), SpriteEffects.None, 1);
+            _spriteBatch.End();
+
+            //Schuift op welk stukje uit 
+            schuifOp_X += 16;
+            if (schuifOp_X > 48)
+            {
+                schuifOp_X = 0;
+            }
+
+            _deelRectangle.X = schuifOp_X;
 
             base.Draw(gameTime);
         }
