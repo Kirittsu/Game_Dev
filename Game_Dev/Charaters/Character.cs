@@ -10,9 +10,9 @@ namespace Game_Dev.Charaters
 {
     public abstract class Character
     {
-        public Texture2D _texture;
+        public Texture2D Texture { get; set; }
         public Rectangle _spriteRectangle;
 
-
+        public int scale = 1;
     }
 }
