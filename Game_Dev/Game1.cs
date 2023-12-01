@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Game_Dev.Managers;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -26,6 +27,9 @@ namespace Game_Dev
 
             _deelRectangle = new Rectangle(schuifOp_X,80, 16, 16);
 
+            ScreenManager.ScreenHeight = Window.ClientBounds.Height;
+            ScreenManager.ScreenWidth = Window.ClientBounds.Width;
+
             base.Initialize();
         }
 
@@ -43,22 +47,22 @@ namespace Game_Dev
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            ScreenManager.Update(gameTime);
 
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
-
+            GraphicsDevice.Clear(Color.Peru);
             //_spriteBatch.Begin en .End moeten altijd staan als je sprites tekent, PointClamp MOET BLIJVEN! (zorgt dat het niet blurry is)
             _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
 
+            ScreenManager.Draw(_spriteBatch);
+
             //.Draw -> _texture = texture, Vector2 is positie, _deelRectangle pakt stuk uit spritesheet, Color.White MOET!
             _spriteBatch.Draw(_texture,new Vector2(10,10), _deelRectangle, Color.White, 0, new Vector2(1,1), new Vector2(8,8), SpriteEffects.None, 1);
+
             _spriteBatch.End();
 
             //Schuift op welk stukje uit 
