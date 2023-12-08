@@ -12,6 +12,7 @@ namespace Game_Dev.Charaters
     {
         public Texture2D Texture { get; set; }
         public Rectangle _spriteRectangle;
+        public Vector2 position;
 
         public int scale = 1;
     }
