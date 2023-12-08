@@ -27,6 +27,7 @@ namespace Game_Dev.Managers
                 direction.Y += 2;
             direction *= snelheid;
             hero.position += direction;
+            snelheid.Normalize();
         }
     }
 }
