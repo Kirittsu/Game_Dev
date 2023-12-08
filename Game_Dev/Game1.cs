@@ -45,7 +45,7 @@ namespace Game_Dev
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            MovemenManager.Move(hero);
+            MovementManager.Move(hero);
 
             ScreenManager.Update(gameTime);
 

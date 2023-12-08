@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace Game_Dev.Managers
 {
-    public static class MovemenManager
+    public static class MovementManager
     {
         private static Vector2 snelheid = new Vector2(1, 1);
 
