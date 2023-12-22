@@ -22,5 +22,17 @@ namespace Game_Dev.Managers
         {
 
         }
+
+        internal static void Load()
+        {
+            if (!GameStateManager.loading)
+            {
+                GameStateManager.loading = true;
+                GameStateManager.gameObjects.Clear();
+                GameStateManager.gameElements.Clear();
+                GameStateManager.CurrentScene().LoadScene();
+                GameStateManager.CurrentScene().LoadMap();
+            }
+        }
     }
 }
