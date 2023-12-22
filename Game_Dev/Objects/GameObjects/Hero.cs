@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game_Dev.Screens
+namespace Game_Dev.Objects.GameObjects
 {
-    internal class EndScreen : BaseScene
+    internal class Hero
     {
-        public override void LoadScene()
-        {
-        }
     }
 }

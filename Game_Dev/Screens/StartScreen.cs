@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Game_Dev.Screens
 {
-    internal class StartScreen
+    internal class StartScreen : BaseScene
     {
+        public override void LoadScene()
+        {
+        }
     }
 }

@@ -1,9 +1,11 @@
 ﻿using Game_Dev.Charaters;
 using Game_Dev.Managers;
+using Game_Dev.Objects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using SharpDX.MediaFoundation;
+using System.Collections.Generic;
 
 namespace Game_Dev
 {
@@ -25,6 +27,9 @@ namespace Game_Dev
 
         protected override void Initialize()
         {
+            GameStateManager.gameObjects = new List<BaseObject>();
+            GameStateManager.gameElements = new List<GameElement>();
+            GameStateManager.LevelIndex = 1;
             hero.Texture = Content.Load<Texture2D>("hero");
 
             _deelRectangle = new Rectangle(schuifOp_X,80, 16, 16);
