@@ -1,6 +1,9 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Game_Dev.Charaters;
+using Game_Dev.Managers;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SharpDX.MediaFoundation;
 
 namespace Game_Dev
 {
@@ -9,6 +12,10 @@ namespace Game_Dev
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
+        private Rectangle _deelRectangle;
+        private int schuifOp_X = 0;
+
+        private Hero hero = new Hero(new Vector2(10,10));
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -18,7 +25,12 @@ namespace Game_Dev
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            hero.Texture = Content.Load<Texture2D>("hero");
+
+            _deelRectangle = new Rectangle(schuifOp_X,80, 16, 16);
+
+            ScreenManager.ScreenHeight = Window.ClientBounds.Height;
+            ScreenManager.ScreenWidth = Window.ClientBounds.Width;
 
             base.Initialize();
         }
@@ -26,8 +38,6 @@ namespace Game_Dev
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
         }
 
         protected override void Update(GameTime gameTime)
@@ -35,16 +45,34 @@ namespace Game_Dev
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            MovementManager.Move(hero);
+
+            ScreenManager.Update(gameTime);
 
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Peru);
+            //_spriteBatch.Begin en .End moeten altijd staan als je sprites tekent, PointClamp MOET BLIJVEN! (zorgt dat het niet blurry is)
+            _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
 
-            // TODO: Add your drawing code here
+            ScreenManager.Draw(_spriteBatch);
+
+            //.Draw -> _texture = texture, Vector2 is positie, _deelRectangle pakt stuk uit spritesheet, Color.White MOET!
+            _spriteBatch.Draw(hero.Texture,hero.position, _deelRectangle, Color.White, 0, new Vector2(1,1), hero.scale, SpriteEffects.None, 1);
+
+            _spriteBatch.End();
+
+            //Schuift op welk stukje uit 
+            schuifOp_X += 16;
+            if (schuifOp_X > 48)
+            {
+                schuifOp_X = 0;
+            }
+
+            _deelRectangle.X = schuifOp_X;
 
             base.Draw(gameTime);
         }
