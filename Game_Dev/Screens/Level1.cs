@@ -1,4 +1,5 @@
-﻿using SharpDX.Direct3D11;
+﻿using Game_Dev.Managers;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace Game_Dev.Screens
             {
 
             };
+            Background = GameStateManager.content.Load<Texture2D>("grassTiles");
         }
     }
 }
