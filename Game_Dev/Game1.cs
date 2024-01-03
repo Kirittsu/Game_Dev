@@ -27,17 +27,22 @@ namespace Game_Dev
 
         protected override void Initialize()
         {
+            base.Initialize();
+
             GameStateManager.gameObjects = new List<BaseObject>();
             GameStateManager.gameElements = new List<GameElement>();
+            GameStateManager.graphics = GraphicsDevice;
+            GameStateManager.content = this.Content;
             GameStateManager.LevelIndex = 1;
+            GameStateManager.Font = Content.Load<SpriteFont>("Text");
+            
             hero.Texture = Content.Load<Texture2D>("hero");
 
             _deelRectangle = new Rectangle(schuifOp_X,80, 16, 16);
 
             ScreenManager.ScreenHeight = Window.ClientBounds.Height;
             ScreenManager.ScreenWidth = Window.ClientBounds.Width;
-
-            base.Initialize();
+            ScreenManager.Load();
         }
 
         protected override void LoadContent()
