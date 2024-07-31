@@ -23,7 +23,7 @@ namespace Game_Dev.Managers
 
         }
 
-        internal static void Load()
+        public static void Load()
         {
             if (!GameStateManager.loading)
             {
