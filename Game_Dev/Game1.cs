@@ -30,9 +30,12 @@ namespace Game_Dev
             GameStateManager.gameObjects = new List<BaseObject>();
             GameStateManager.gameElements = new List<GameElement>();
             GameStateManager.LevelIndex = 1;
+
             hero.Texture = Content.Load<Texture2D>("hero");
 
             _deelRectangle = new Rectangle(schuifOp_X,80, 16, 16);
+
+            //_graphics.ToggleFullScreen();
 
             ScreenManager.ScreenHeight = Window.ClientBounds.Height;
             ScreenManager.ScreenWidth = Window.ClientBounds.Width;
