@@ -1,11 +1,11 @@
-﻿using Game_Dev.Charaters;
-using Microsoft.Xna.Framework.Input;
+﻿using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
+using Game_Dev.Characters;
 
 namespace Game_Dev.Managers
 {

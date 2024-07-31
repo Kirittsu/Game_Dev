@@ -1,4 +1,5 @@
-﻿using Game_Dev.Objects.GameObjects;
+﻿using Game_Dev.Managers;
+using Game_Dev.Objects.GameObjects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -41,6 +42,14 @@ namespace Game_Dev.Screens
                         }
                     }
                 }
+            }
+        }
+
+        public virtual void Draw(SpriteBatch spriteBatch)
+        {
+            if (Background != null)
+            {
+                spriteBatch.Draw(Background, new Rectangle(0, 0, ScreenManager.ScreenWidth, ScreenManager.ScreenHeight), new Rectangle(0, 0, Background.Width, Background.Height), Color.White);
             }
         }
     }
