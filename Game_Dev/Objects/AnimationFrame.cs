@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 
 namespace Game_Dev.Objects
 {
-    internal class AnimationFrame
+    public class AnimationFrame
     {
         //public List<Hitbox> Hitboxes { get; set; }
         public Rectangle frame { get; set; }

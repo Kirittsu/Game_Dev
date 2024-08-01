@@ -11,7 +11,7 @@ using SharpDX.Direct2D1.Effects;
 
 namespace Game_Dev.Characters
 {
-    internal class Hero : Character, IAnimate
+    public class Hero : Character, IAnimate
     {
         public int currentFrameIndex { get; set; }
         public int holdFrame { get; set; }

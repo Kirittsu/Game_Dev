@@ -14,7 +14,7 @@ using Game_Dev.Interfaces;
 
 namespace Game_Dev.Objects
 {
-    internal abstract class BaseObject : GameElement
+    public abstract class BaseObject : GameElement
     {
         public Texture2D Texture { get; set; }
         public float scale = 1;

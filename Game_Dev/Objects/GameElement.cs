@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Game_Dev.Objects
 {
-    internal abstract class GameElement
+    public abstract class GameElement
     {
         public Vector2 MinPosition { get; set; }
         public Vector2 MaxPosition

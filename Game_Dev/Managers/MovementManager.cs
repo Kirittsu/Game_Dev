@@ -26,7 +26,7 @@ namespace Game_Dev.Managers
             if (state.IsKeyDown(Keys.Down))
                 direction.Y += 2;
             direction *= snelheid;
-            hero.position += direction;
+            hero.MinPosition += direction;
             snelheid.Normalize();
         }
     }

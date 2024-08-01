@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Game_Dev.Characters
 {
-    internal abstract class Character : BaseObject
+    public abstract class Character : BaseObject
     {
         
     }
