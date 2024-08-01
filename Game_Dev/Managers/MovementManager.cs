@@ -13,7 +13,7 @@ namespace Game_Dev.Managers
     {
         private static Vector2 snelheid = new Vector2(1, 1);
 
-        public static void Move(Hero hero)
+        public static void Move(Character character, GameTime gameTime)
         {
             KeyboardState state = Keyboard.GetState();
             var direction = Vector2.Zero;
@@ -26,7 +26,7 @@ namespace Game_Dev.Managers
             if (state.IsKeyDown(Keys.Down))
                 direction.Y += 2;
             direction *= snelheid;
-            hero.MinPosition += direction;
+            character.MinPosition += direction;
             snelheid.Normalize();
         }
     }

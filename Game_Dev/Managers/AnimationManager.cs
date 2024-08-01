@@ -7,10 +7,11 @@ using Game_Dev.Characters;
 using Game_Dev.Interfaces;
 using Game_Dev.Objects;
 using Game_Dev.Objects.GameObjects;
+using Microsoft.Xna.Framework;
 
 namespace Game_Dev.Managers
 {
-    internal class AnimationManager
+    public class AnimationManager
     {
         public static List<AnimationFrame> HeroIdle = new();
         public static List<AnimationFrame> HeroWalking = new();
@@ -67,7 +68,23 @@ namespace Game_Dev.Managers
 
         public static void Load()
         {
+            #region Hero
+            HeroIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 6, 16, 15, 24));
 
+            HeroWalking.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 6, 52, 15, 24));
+            #endregion
         }
     }
 }

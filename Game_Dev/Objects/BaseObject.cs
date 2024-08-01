@@ -32,6 +32,8 @@ namespace Game_Dev.Objects
 
             }
         }
+        public new int Width { get { return (int)(CurrentFrame.frame.Width * scale); } }
+        public new int Height { get { return (int)(CurrentFrame.frame.Height * scale); } }
         public Vector2 Facing { get; set; }
         public AnimationFrame CurrentFrame { get; set; }
         public BaseObject()
