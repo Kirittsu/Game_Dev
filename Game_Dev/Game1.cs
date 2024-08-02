@@ -33,6 +33,8 @@ namespace Game_Dev
             GameStateManager.LevelIndex = 1;
             GameStateManager.Font = Content.Load<SpriteFont>("Text");
 
+            AnimationManager.Load();
+
             //_deelRectangle = new Rectangle(schuifOp_X,80, 16, 16);
 
             ScreenManager.ScreenHeight = Window.ClientBounds.Height;
