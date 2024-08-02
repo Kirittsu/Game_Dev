@@ -75,7 +75,31 @@ namespace Game_Dev.Managers
                 new Hitbox(6, 5, new Vector2(3, 0)),
                 new Hitbox(2, 3, new Vector2(9, 2)),
                 new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 6, 16, 15, 24));
+            }, 0, 80, 16, 16));
+
+            HeroIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 16, 80, 16, 16));
+
+            HeroIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 32, 80, 16, 16));
+
+            HeroIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 48, 80, 16, 16));
 
             HeroWalking.Add(new AnimationFrame(new List<Hitbox>
             {
@@ -83,7 +107,47 @@ namespace Game_Dev.Managers
                 new Hitbox(6, 5, new Vector2(3, 0)),
                 new Hitbox(2, 3, new Vector2(9, 2)),
                 new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 6, 52, 15, 24));
+            }, 0, 16, 16, 16));
+
+            HeroWalking.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 16, 16, 16, 16));
+
+            HeroWalking.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 32, 16, 16, 16));
+
+            HeroWalking.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 48, 16, 16, 16));
+
+            HeroWalking.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 64, 16, 16, 16));
+
+            HeroWalking.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 80, 16, 16, 16));
             #endregion
         }
     }

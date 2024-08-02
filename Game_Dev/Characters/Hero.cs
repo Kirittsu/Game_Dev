@@ -27,7 +27,7 @@ namespace Game_Dev.Characters
 
         public override bool Interaction(BaseObject gameObject)
         {
-            return true;
+            return false;
         }
     }
 }

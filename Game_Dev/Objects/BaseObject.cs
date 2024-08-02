@@ -54,7 +54,7 @@ namespace Game_Dev.Objects
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            if (Facing.X < 0)
+            if (Facing.X > 0)
                 spriteBatch.Draw(Texture, new Rectangle((int)MinPosition.X, (int)MinPosition.Y, Width, Height), CurrentFrame.frame, Color.White);
             
             else

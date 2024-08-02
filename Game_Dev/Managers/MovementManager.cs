@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Game_Dev.Characters;
+using Game_Dev.Interfaces;
 
 namespace Game_Dev.Managers
 {
@@ -26,6 +27,21 @@ namespace Game_Dev.Managers
             if (state.IsKeyDown(Keys.Down))
                 direction.Y += 2;
             direction *= snelheid;
+
+            if (character is IAnimate)
+            {
+                if (direction.X == 0 && direction.Y == 0) character.Status = Status.Idle;
+
+                else character.Status = Status.Walking;
+            }
+
+            Vector2 facing = character.Facing;
+
+            if (direction.X != 0) facing.X = direction.X;
+
+            character.Facing = facing;
+
+            //apply everything
             character.MinPosition += direction;
             snelheid.Normalize();
         }
