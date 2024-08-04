@@ -37,6 +37,8 @@ namespace Game_Dev.Screens
 
             new Hero(new Vector2(100, 100));
 
+            new Goblin(new Vector2(200, 200));
+
             GameStateManager.UIToggle = false;
         }
     }

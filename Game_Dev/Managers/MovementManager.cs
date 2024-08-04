@@ -17,20 +17,24 @@ namespace Game_Dev.Managers
         public static void Move(Character character, GameTime gameTime)
         {
             KeyboardState state = Keyboard.GetState();
+            
             var direction = Vector2.Zero;
-            if (state.IsKeyDown(Keys.Left))
-                direction.X -= 2;
-            if (state.IsKeyDown(Keys.Right))
-                direction.X += 2;
-            if (state.IsKeyDown(Keys.Up))
-                direction.Y -= 2;
-            if (state.IsKeyDown(Keys.Down))
-                direction.Y += 2;
+
+            if (state.IsKeyDown(Keys.Left)) direction.X -= 2;
+
+            if (state.IsKeyDown(Keys.Right)) direction.X += 2;
+
+            if (state.IsKeyDown(Keys.Up)) direction.Y -= 2;
+
+            if (state.IsKeyDown(Keys.Down)) direction.Y += 2;
+
             direction *= snelheid;
 
             if (character is IAnimate)
             {
                 if (direction.X == 0 && direction.Y == 0) character.Status = Status.Idle;
+
+                else if (state.IsKeyDown(Keys.C)) character.Status = Status.Attacking;
 
                 else character.Status = Status.Walking;
             }

@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace Game_Dev
 {
-    public enum Status { Idle, Walking };
+    public enum Status { Idle, Walking, Attacking };
 
     public class Game1 : Game
     {
