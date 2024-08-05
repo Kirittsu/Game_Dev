@@ -310,7 +310,15 @@ namespace Game_Dev.Managers
                 new Hitbox(6, 5, new Vector2(3, 0)),
                 new Hitbox(2, 3, new Vector2(9, 2)),
                 new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 24, 32, 16, 16));
+            }, 16, 32, 16, 16));
+
+            GoblinStabbing.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 32, 32, 16, 16));
 
             GoblinStabbing.Add(new AnimationFrame(new List<Hitbox>
             {
@@ -319,14 +327,6 @@ namespace Game_Dev.Managers
                 new Hitbox(2, 3, new Vector2(9, 2)),
                 new Hitbox(12, 19, new Vector2(0, 5)),
             }, 48, 32, 16, 16));
-
-            GoblinStabbing.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 62, 32, 16, 16));
             #endregion
 
             #region GoblinBomber
