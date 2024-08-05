@@ -1,5 +1,7 @@
 ﻿using Game_Dev.Managers;
 using Game_Dev.Objects.GameObjects;
+using Game_Dev.Objects.GameObjects.Grass;
+using Game_Dev.Objects.GameObjects.Walls;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -16,9 +18,11 @@ namespace Game_Dev.Screens
         public Dictionary<string, del> objAbbreviation = new()
         {
             {"0", null },
-            {"1", delegate(Vector2 position){ new Wall(position); } },
-            {"C", delegate(Vector2 position){ new Cave(position); } },
-            {"S", delegate(Vector2 position){ new Spikes(position); } }
+            {"W", delegate(Vector2 position){ new Wall(position); } },
+            {"L", delegate(Vector2 position){ new WallLeft(position); } },
+            {"R", delegate(Vector2 position){ new WallRight(position); } },
+            {"G", delegate(Vector2 position){ new Grass(position); } },
+            {"V", delegate(Vector2 position){ new GrassLeaves(position); } }
         };
 
         public abstract void LoadScene();

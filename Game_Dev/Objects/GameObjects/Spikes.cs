@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Game_Dev.Objects.GameObjects
 {
-    internal class Spikes : BaseObject
+    public class Spikes : BaseObject
     {
         public Spikes(Vector2 position)
         {
