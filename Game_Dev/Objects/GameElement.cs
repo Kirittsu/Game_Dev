@@ -19,6 +19,8 @@ namespace Game_Dev.Objects
         }
         public int Width { get; set; }
         public int Height { get; set; }
+
+        public int DrawOrder = 0;
         public abstract void Draw(SpriteBatch spriteBatch);
 
         public GameElement()

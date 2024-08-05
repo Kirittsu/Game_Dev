@@ -19,7 +19,7 @@ namespace Game_Dev.Managers
         public static void Draw(SpriteBatch spriteBatch)
         {
             GameStateManager.CurrentScene().Draw(spriteBatch);
-            foreach (GameElement gElement in GameStateManager.gameElements)
+            foreach (GameElement gElement in GameStateManager.gameElements.OrderBy(o => o.DrawOrder))
             {
                 //handeld by BaseObject/Movable
                 gElement.Draw(spriteBatch);
