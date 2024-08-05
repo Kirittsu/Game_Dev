@@ -32,11 +32,19 @@ namespace Game_Dev.Managers
 
             if (character is IAnimate)
             {
-                if (direction.X == 0 && direction.Y == 0) character.Status = Status.Idle;
+                if (direction.X == 0 && direction.Y == 0)
+                {
+                    if (state.IsKeyDown(Keys.C)) character.Status = Status.Attacking;
 
-                else if (state.IsKeyDown(Keys.C)) character.Status = Status.Attacking;
+                    else character.Status = Status.Idle;
+                }
 
-                else character.Status = Status.Walking;
+                else
+                {
+                    if (state.IsKeyDown(Keys.C)) character.Status = Status.Attacking;
+
+                    else character.Status = Status.Walking;
+                }
             }
 
             Vector2 facing = character.Facing;
