@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Game_Dev.Managers
 {
-    internal class GameStateManager
+    public class GameStateManager
     {
         public static bool UIToggle = false;
         public static List<BaseObject> gameObjects;
