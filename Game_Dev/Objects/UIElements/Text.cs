@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Game_Dev.Objects.UIElements
 {
-    internal class Text : GameElement
+    public class Text : GameElement
     {
         public string Content { get; set; }
 

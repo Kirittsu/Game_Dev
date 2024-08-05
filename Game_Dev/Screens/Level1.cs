@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework;
 
 namespace Game_Dev.Screens
 {
-    internal class Level1 : BaseScene
+    public class Level1 : BaseScene
     {
         public override void LoadScene()
         {

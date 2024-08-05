@@ -12,8 +12,8 @@ using System.Threading.Tasks;
 
 namespace Game_Dev.Screens
 {
-    delegate void del(Vector2 position);
-    internal abstract class BaseScene
+    public delegate void del(Vector2 position);
+    public abstract class BaseScene
     {
         public Dictionary<string, del> objAbbreviation = new()
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game_Dev.Screens
 {
-    internal class Level2 : BaseScene
+    public class Level2 : BaseScene
     {
         public override void LoadScene()
         {
