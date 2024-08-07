@@ -17,7 +17,7 @@ namespace Game_Dev.Screens
     {
         public Dictionary<string, del> objAbbreviation = new()
         {
-            {"x", null },
+            {"00", null },
             #region Wall
             {"WW", delegate(Vector2 position){ new Wall(position); } },
             {"WD", delegate(Vector2 position){ new WallDirt(position); } },
