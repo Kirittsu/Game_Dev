@@ -22,6 +22,7 @@ namespace Game_Dev.Characters
             MinPosition = position;
             Texture = GameStateManager.content.Load<Texture2D>("goblin");
             Facing = new Vector2(1, 0);
+            DrawOrder = 1;
         }
 
         public override bool Interaction(BaseObject gameObject)

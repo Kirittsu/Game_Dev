@@ -20,13 +20,17 @@ namespace Game_Dev.Managers
             
             var direction = Vector2.Zero;
 
-            if (state.IsKeyDown(Keys.Left)) direction.X -= 3.5f;
 
-            if (state.IsKeyDown(Keys.Right)) direction.X += 3.5f;
+            if (character is Hero)
+            {
+                if (state.IsKeyDown(Keys.Left)) direction.X -= 3.5f;
 
-            if (state.IsKeyDown(Keys.Up)) direction.Y -= 3.5f;
+                if (state.IsKeyDown(Keys.Right)) direction.X += 3.5f;
 
-            if (state.IsKeyDown(Keys.Down)) direction.Y += 3.5f;
+                if (state.IsKeyDown(Keys.Up)) direction.Y -= 3.5f;
+
+                if (state.IsKeyDown(Keys.Down)) direction.Y += 3.5f;
+            }
 
             direction *= snelheid;
 
