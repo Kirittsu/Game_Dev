@@ -23,11 +23,33 @@ namespace Game_Dev.Managers
         public static List<AnimationFrame> GoblinStabbing = new();
         public static List<AnimationFrame> GoblinBomberIdle = new();
         public static List<AnimationFrame> SpikesIdle = new();
+
+        #region wall
         public static List<AnimationFrame> WallIdle = new();
+        public static List<AnimationFrame> WallTopLeftIdle = new();
+        public static List<AnimationFrame> WallTopIdle = new();
+        public static List<AnimationFrame> WallTopRightIdle = new();
         public static List<AnimationFrame> WallLeftIdle = new();
+        public static List<AnimationFrame> WallFieldIdle = new();
         public static List<AnimationFrame> WallRightIdle = new();
+        public static List<AnimationFrame> WallBottomLeftIdle = new();
+        public static List<AnimationFrame> WallBottomIdle = new();
+        public static List<AnimationFrame> WallBottomRightIdle = new();
+        public static List<AnimationFrame> WallDirtIdle = new();
+        #endregion
+
+        #region grass
         public static List<AnimationFrame> GrassIdle = new();
+        public static List<AnimationFrame> GrassTopLeftIdle = new();
+        public static List<AnimationFrame> GrassTopIdle = new();
+        public static List<AnimationFrame> GrassTopRightIdle = new();
+        public static List<AnimationFrame> GrassLeftIdle = new();
         public static List<AnimationFrame> GrassLeavesIdle = new();
+        public static List<AnimationFrame> GrassRightIdle = new();
+        public static List<AnimationFrame> GrassBottomLeftIdle = new();
+        public static List<AnimationFrame> GrassBottomIdle = new();
+        public static List<AnimationFrame> GrassBottomRightIdle = new();
+        #endregion
         public static List<AnimationFrame> CaveIdle = new();
 
         public static AnimationFrame GetCurrentFrame(int index, BaseObject requester)
@@ -78,21 +100,75 @@ namespace Game_Dev.Managers
                             break;
                     }
                     break;
+                #region Wall
                 case Wall:
                     selectedList = WallIdle;
+                    break;
+                case WallTopLeft:
+                    selectedList = WallTopLeftIdle;
+                    break;
+                case WallTop:
+                    selectedList = WallTopIdle;
+                    break;
+                case WallTopRight:
+                    selectedList = WallTopRightIdle;
                     break;
                 case WallLeft:
                     selectedList = WallLeftIdle;
                     break;
+                case WallField:
+                    selectedList = WallFieldIdle;
+                    break;
                 case WallRight:
                     selectedList = WallRightIdle;
                     break;
+                case WallBottomLeft:
+                    selectedList = WallBottomLeftIdle;
+                    break;
+                case WallBottom:
+                    selectedList = WallBottomIdle;
+                    break;
+                case WallBottomRight:
+                    selectedList = WallBottomRightIdle;
+                    break;
+                case WallDirt:
+                    selectedList = WallDirtIdle;
+                    break;
+                #endregion
+
+                #region Grass
                 case Grass:
                     selectedList = GrassIdle;
+                    break;
+                case GrassTopLeft:
+                    selectedList = GrassTopLeftIdle;
+                    break;
+                case GrassTop:
+                    selectedList = GrassTopIdle;
+                    break;
+                case GrassTopRight:
+                    selectedList = GrassTopRightIdle;
+                    break;
+                case GrassLeft:
+                    selectedList = GrassLeftIdle;
                     break;
                 case GrassLeaves:
                     selectedList = GrassLeavesIdle;
                     break;
+                case GrassRight:
+                    selectedList = GrassRightIdle;
+                    break;
+                case GrassBottomLeft:
+                    selectedList = GrassBottomLeftIdle;
+                    break;
+                case GrassBottom:
+                    selectedList = GrassBottomIdle;
+                    break;
+                case GrassBottomRight:
+                    selectedList = GrassBottomRightIdle;
+                    break;
+                #endregion
+
                 case Spikes:
                     selectedList = SpikesIdle;
                     break;
@@ -388,21 +464,77 @@ namespace Game_Dev.Managers
                 new Hitbox(6, 5, new Vector2(3, 0)),
                 new Hitbox(2, 3, new Vector2(9, 2)),
                 new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 144, 384, 32, 32));
+            }, 144, 448, 32, 32));
+            WallTopLeftIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 128, 0, 32, 32));
+            WallTopIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 160, 0, 32, 32));
+            WallTopRightIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 195, 0, 32, 32));
             WallLeftIdle.Add(new AnimationFrame(new List<Hitbox>
             {
                 new Hitbox(2, 3, new Vector2(1, 2)),
                 new Hitbox(6, 5, new Vector2(3, 0)),
                 new Hitbox(2, 3, new Vector2(9, 2)),
                 new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 128, 355, 32, 32));
+            }, 128, 32, 32, 32));
+            WallFieldIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 32, 32, 32, 32));
             WallRightIdle.Add(new AnimationFrame(new List<Hitbox>
             {
                 new Hitbox(2, 3, new Vector2(1, 2)),
                 new Hitbox(6, 5, new Vector2(3, 0)),
                 new Hitbox(2, 3, new Vector2(9, 2)),
                 new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 160, 355, 32, 32));
+            }, 195, 32, 32, 32));
+            WallBottomLeftIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 128, 64, 32, 32));
+            WallBottomIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 160, 64, 32, 32));
+            WallBottomRightIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 195, 64, 32, 32));
+            WallDirtIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 160, 32, 32, 32));
             #endregion
 
             #region Grass
@@ -413,6 +545,34 @@ namespace Game_Dev.Managers
                 new Hitbox(2, 3, new Vector2(9, 2)),
                 new Hitbox(12, 19, new Vector2(0, 5)),
             }, 32, 160, 32, 32));
+            GrassTopLeftIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 128, 128, 32, 32));
+            GrassTopIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 160, 128, 32, 32));
+            GrassTopRightIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 195, 128, 32, 32));
+            GrassLeftIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 128, 160, 32, 32));
             GrassLeavesIdle.Add(new AnimationFrame(new List<Hitbox>
             {
                 new Hitbox(2, 3, new Vector2(1, 2)),
@@ -420,6 +580,42 @@ namespace Game_Dev.Managers
                 new Hitbox(2, 3, new Vector2(9, 2)),
                 new Hitbox(12, 19, new Vector2(0, 5)),
             }, 160, 160, 32, 32));
+            GrassRightIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 195, 160, 32, 32));
+            GrassBottomLeftIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 128, 192, 32, 32));
+            GrassBottomIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 160, 192, 32, 32));
+            GrassBottomRightIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 195, 192, 32, 32));
+
+
+
+
+
+
+
+
             #endregion
         }
     }

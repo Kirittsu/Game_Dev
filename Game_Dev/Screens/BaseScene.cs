@@ -17,12 +17,34 @@ namespace Game_Dev.Screens
     {
         public Dictionary<string, del> objAbbreviation = new()
         {
-            {"0", null },
-            {"W", delegate(Vector2 position){ new Wall(position); } },
-            {"L", delegate(Vector2 position){ new WallLeft(position); } },
-            {"R", delegate(Vector2 position){ new WallRight(position); } },
-            {"G", delegate(Vector2 position){ new Grass(position); } },
-            {"V", delegate(Vector2 position){ new GrassLeaves(position); } }
+            {"x", null },
+            #region Wall
+            {"WW", delegate(Vector2 position){ new Wall(position); } },
+            {"WD", delegate(Vector2 position){ new WallDirt(position); } },
+            {"W1", delegate(Vector2 position){ new WallTopLeft(position); } },
+            {"W2", delegate(Vector2 position){ new WallTop(position); } },
+            {"W3", delegate(Vector2 position){ new WallTopRight(position); } },
+            {"W4", delegate(Vector2 position){ new WallLeft(position); } },
+            {"W5", delegate(Vector2 position){ new WallField(position); } },
+            {"W6", delegate(Vector2 position){ new WallRight(position); } },
+            {"W7", delegate(Vector2 position){ new WallBottomLeft(position); } },
+            {"W8", delegate(Vector2 position){ new WallBottom(position); } },
+            {"W9", delegate(Vector2 position){ new WallBottomRight(position); } },
+            #endregion
+
+            #region Grass
+            {"  ", delegate(Vector2 position){ new Grass(position); } },
+            {"G1", delegate(Vector2 position){ new GrassTopLeft(position); } },
+            {"G2", delegate(Vector2 position){ new GrassTop(position); } },
+            {"G3", delegate(Vector2 position){ new GrassTopRight(position); } },
+            {"G4", delegate(Vector2 position){ new GrassLeft(position); } },
+            {"G5", delegate(Vector2 position){ new GrassLeaves(position); } },
+            {"G6", delegate(Vector2 position){ new GrassRight(position); } },
+            {"G7", delegate(Vector2 position){ new GrassBottomLeft(position); } },
+            {"G8", delegate(Vector2 position){ new GrassBottom(position); } },
+            {"G9", delegate(Vector2 position){ new GrassBottomRight(position); } }
+            #endregion
+            
         };
 
         public abstract void LoadScene();
