@@ -48,13 +48,8 @@ namespace Game_Dev.Screens
 
             { "W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","WD","W5","W5","W5","W5" }
             };
-            //Background = GameStateManager.content.Load<Texture2D>("grassTiles");
 
             new Hero(new Vector2(150, 300));
-
-            new Goblin(new Vector2(600, 350));
-
-            new Goblin(new Vector2(700, 250));
 
             GameStateManager.UIToggle = false;
         }

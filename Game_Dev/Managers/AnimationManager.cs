@@ -7,6 +7,8 @@ using Game_Dev.Characters;
 using Game_Dev.Interfaces;
 using Game_Dev.Objects;
 using Game_Dev.Objects.GameObjects;
+using Game_Dev.Objects.GameObjects.Dungeon.CaveWalls;
+using Game_Dev.Objects.GameObjects.Dungeon.CaveFloor ;
 using Game_Dev.Objects.GameObjects.Grass;
 using Game_Dev.Objects.GameObjects.Walls;
 using Microsoft.Xna.Framework;
@@ -51,6 +53,21 @@ namespace Game_Dev.Managers
         public static List<AnimationFrame> GrassBottomRightIdle = new();
         #endregion
         public static List<AnimationFrame> CaveIdle = new();
+
+        #region Cave
+        public static List<AnimationFrame> CaveWallTopLeftIdle = new();
+        public static List<AnimationFrame> CaveWallHorizontalIdle = new();
+        public static List<AnimationFrame> CaveWallTopRightIdle = new();
+        public static List<AnimationFrame> CaveWallVerticalIdle = new();
+        public static List<AnimationFrame> CaveWallIdle = new();
+        public static List<AnimationFrame> CaveWallTopIdle = new();
+        public static List<AnimationFrame> CaveWallDarkIdle = new();
+        public static List<AnimationFrame> CaveWallDarkerIdle = new();
+
+        public static List<AnimationFrame> CaveFloorLeftIdle = new();
+        public static List<AnimationFrame> CaveFloorIdle = new();
+        public static List<AnimationFrame> CaveFloorRightIdle = new();
+        #endregion
 
         public static AnimationFrame GetCurrentFrame(int index, BaseObject requester)
         {
@@ -166,6 +183,44 @@ namespace Game_Dev.Managers
                     break;
                 case GrassBottomRight:
                     selectedList = GrassBottomRightIdle;
+                    break;
+                #endregion
+
+                #region Cave
+                case CaveWallTopLeft:
+                    selectedList = CaveWallTopLeftIdle;
+                    break;
+                case CaveWallHorizontal:
+                    selectedList = CaveWallHorizontalIdle;
+                    break;
+                case CaveWallTopRight:
+                    selectedList = CaveWallTopRightIdle;
+                    break;
+                case CaveWallVertical:
+                    selectedList = CaveWallVerticalIdle;
+                    break;
+                case CaveWall:
+                    selectedList = CaveWallIdle;
+                    break;
+                case CaveWallTop:
+                    selectedList = CaveWallTopIdle;
+                    break;
+                case CaveWallDark:
+                    selectedList = CaveWallDarkIdle;
+                    break;
+                case CaveWallDarker:
+                    selectedList = CaveWallDarkerIdle;
+                    break;
+
+
+                case CaveFloorLeft:
+                    selectedList = CaveFloorLeftIdle;
+                    break;
+                case CaveFloor:
+                    selectedList = CaveFloorIdle;
+                    break;
+                case CaveFloorRight:
+                    selectedList = CaveFloorRightIdle;
                     break;
                 #endregion
 
@@ -535,6 +590,14 @@ namespace Game_Dev.Managers
                 new Hitbox(2, 3, new Vector2(9, 2)),
                 new Hitbox(12, 19, new Vector2(0, 5)),
             }, 160, 32, 32, 32));
+
+            CaveIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 32, 355, 32, 32));
             #endregion
 
             #region Grass
@@ -616,6 +679,98 @@ namespace Game_Dev.Managers
 
 
 
+            #endregion
+
+            #region Cave
+            CaveWallTopLeftIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 64, 0, 32, 32));
+
+            CaveWallHorizontalIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 96, 0, 32, 32));
+
+            CaveWallTopRightIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 128, 0, 32, 32));
+
+            CaveWallVerticalIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 64, 32, 32, 32));
+
+            CaveWallIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 96, 32, 32, 32));
+
+            CaveWallTopIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 128, 64, 32, 32));
+
+            CaveWallDarkIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 320, 128, 32, 32));
+
+            CaveWallDarkerIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 192, 160, 32, 32));
+
+
+
+            CaveFloorLeftIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 128, 320, 32, 32));
+
+            CaveFloorIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 160, 320, 32, 32));
+
+            CaveFloorRightIdle.Add(new AnimationFrame(new List<Hitbox>
+            {
+                new Hitbox(2, 3, new Vector2(1, 2)),
+                new Hitbox(6, 5, new Vector2(3, 0)),
+                new Hitbox(2, 3, new Vector2(9, 2)),
+                new Hitbox(12, 19, new Vector2(0, 5)),
+            }, 192, 320, 32, 32));
             #endregion
         }
     }

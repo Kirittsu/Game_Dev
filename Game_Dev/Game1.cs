@@ -59,7 +59,7 @@ namespace Game_Dev
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Peru);
+            GraphicsDevice.Clear(Color.Black);
             //_spriteBatch.Begin en .End moeten altijd staan als je sprites tekent, PointClamp MOET BLIJVEN! (zorgt dat het niet blurry is)
             _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
 

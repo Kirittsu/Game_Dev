@@ -1,5 +1,7 @@
 ﻿using Game_Dev.Managers;
 using Game_Dev.Objects.GameObjects;
+using Game_Dev.Objects.GameObjects.Dungeon.CaveWalls;
+using Game_Dev.Objects.GameObjects.Dungeon.CaveFloor;
 using Game_Dev.Objects.GameObjects.Grass;
 using Game_Dev.Objects.GameObjects.Walls;
 using Microsoft.Xna.Framework;
@@ -30,6 +32,7 @@ namespace Game_Dev.Screens
             {"W7", delegate(Vector2 position){ new WallBottomLeft(position); } },
             {"W8", delegate(Vector2 position){ new WallBottom(position); } },
             {"W9", delegate(Vector2 position){ new WallBottomRight(position); } },
+            {"WC", delegate(Vector2 position){ new Cave(position); } },
             #endregion
 
             #region Grass
@@ -42,9 +45,24 @@ namespace Game_Dev.Screens
             {"G6", delegate(Vector2 position){ new GrassRight(position); } },
             {"G7", delegate(Vector2 position){ new GrassBottomLeft(position); } },
             {"G8", delegate(Vector2 position){ new GrassBottom(position); } },
-            {"G9", delegate(Vector2 position){ new GrassBottomRight(position); } }
+            {"G9", delegate(Vector2 position){ new GrassBottomRight(position); } },
             #endregion
-            
+
+            #region Cave
+            {"C1", delegate(Vector2 position){ new CaveWallTopLeft(position); } },
+            {"C2", delegate(Vector2 position){ new CaveWallHorizontal(position); } },
+            {"C3", delegate(Vector2 position){ new CaveWallTopRight(position); } },
+            {"C4", delegate(Vector2 position){ new CaveWallVertical(position); } },
+            {"C5", delegate(Vector2 position){ new CaveWall(position); } },
+            {"C6", delegate(Vector2 position){ new CaveWallTop(position); } },
+            {"C7", delegate(Vector2 position){ new CaveWallDark(position); } },
+            {"C8", delegate(Vector2 position){ new CaveWallDarker(position); } },
+
+            {"T1", delegate(Vector2 position){ new CaveFloorLeft(position); } },
+            {"T2", delegate(Vector2 position){ new CaveFloor(position); } },
+            {"T3", delegate(Vector2 position){ new CaveFloorRight(position); } }
+            #endregion
+
         };
 
         public abstract void LoadScene();
