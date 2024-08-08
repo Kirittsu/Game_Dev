@@ -43,8 +43,7 @@ namespace Game_Dev.Managers
                 {
                     LevelIndex = 0;
                 }
-                else
-                if (LevelIndex == 6)
+                else if (LevelIndex == 6)
                 {
                     LevelIndex = currentLevel;
                 }

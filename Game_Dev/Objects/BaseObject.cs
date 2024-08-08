@@ -32,20 +32,13 @@ namespace Game_Dev.Objects
 
             }
         }
-        public new int Width { get { return (int)(CurrentFrame.frame.Width * scale); } }
-        public new int Height { get { return (int)(CurrentFrame.frame.Height * scale); } }
+        public new int Width { get { return (int)(CurrentFrame.Frame.Width * scale); } }
+        public new int Height { get { return (int)(CurrentFrame.Frame.Height * scale); } }
         public Vector2 Facing { get; set; }
         public AnimationFrame CurrentFrame { get; set; }
         public BaseObject()
         {
             GameStateManager.gameObjects.Add(this);
-
-            switch (this)
-            {
-                case Hero:
-                    scale = 2f;
-                    break;
-            }
 
             Status = Status.Idle;
             Facing = new Vector2(1, 0);
@@ -55,10 +48,10 @@ namespace Game_Dev.Objects
         public override void Draw(SpriteBatch spriteBatch)
         {
             if (Facing.X > 0)
-                spriteBatch.Draw(Texture, new Rectangle((int)MinPosition.X, (int)MinPosition.Y, Width, Height), CurrentFrame.frame, Color.White);
+                spriteBatch.Draw(Texture, new Rectangle((int)MinPosition.X, (int)MinPosition.Y, Width, Height), CurrentFrame.Frame, Color.White);
             
             else
-                spriteBatch.Draw(Texture, new Rectangle((int)MinPosition.X, (int)MinPosition.Y, Width, Height), CurrentFrame.frame, Color.White, 0f, new Vector2(), SpriteEffects.FlipHorizontally, 0f);
+                spriteBatch.Draw(Texture, new Rectangle((int)MinPosition.X, (int)MinPosition.Y, Width, Height), CurrentFrame.Frame, Color.White, 0f, new Vector2(), SpriteEffects.FlipHorizontally, 0f);
             
         }
     }

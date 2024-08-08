@@ -19,10 +19,7 @@ namespace Game_Dev.Characters
         public virtual void Update(GameTime gameTime)
         {
             MovementManager.Move(this, gameTime);
-            foreach (var hitbox in CurrentFrame.Hitboxes)
-            {
-                hitbox.Flip(this);
-            }
+            this.CurrentFrame.Hitbox.Flip(this);
         }
 
         public abstract bool Interaction(BaseObject gameObject);

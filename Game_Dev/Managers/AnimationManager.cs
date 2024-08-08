@@ -251,526 +251,145 @@ namespace Game_Dev.Managers
         public static void Load()
         {
             #region Hero
-            HeroIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 0, 80, 16, 16));
+            HeroIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 0, 80, 16, 16));
 
-            HeroIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 16, 80, 16, 16));
+            HeroIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 16, 80, 16, 16));
 
-            HeroIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 32, 80, 16, 16));
+            HeroIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 32, 80, 16, 16));
 
-            HeroIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 48, 80, 16, 16));
+            HeroIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 48, 80, 16, 16));
 
-            HeroWalking.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 0, 16, 16, 16));
+            HeroWalking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 0, 16, 16, 16));
 
-            HeroWalking.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 16, 16, 16, 16));
+            HeroWalking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 16, 16, 16, 16));
 
-            HeroWalking.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 32, 16, 16, 16));
+            HeroWalking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 32, 16, 16, 16));
 
-            HeroWalking.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 48, 16, 16, 16));
+            HeroWalking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 48, 16, 16, 16));
 
-            HeroWalking.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 64, 16, 16, 16));
+            HeroWalking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 64, 16, 16, 16));
 
-            HeroWalking.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 80, 16, 16, 16));
+            HeroWalking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 80, 16, 16, 16));
 
-            HeroAttacking.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 0, 48, 16, 16));
+            HeroAttacking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 0, 48, 16, 16));
 
-            HeroAttacking.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 16, 48, 16, 16));
+            HeroAttacking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 16, 48, 16, 16));
 
-            HeroAttacking.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 32, 48, 16, 16));
+            HeroAttacking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 32, 48, 16, 16));
 
-            HeroAttacking.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 48, 48, 16, 16));
+            HeroAttacking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 48, 48, 16, 16));
             #endregion
 
             #region Goblin
-            GoblinIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 0, 48, 16, 16));
+            GoblinIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 0, 48, 16, 16));
 
-            GoblinIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 16, 48, 16, 16));
+            GoblinIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 16, 48, 16, 16));
 
-            GoblinIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 32, 48, 16, 16));
+            GoblinIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 32, 48, 16, 16));
 
-            GoblinIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 48, 48, 16, 16));
+            GoblinIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 48, 48, 16, 16));
 
-            GoblinWalking.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 0, 0, 16, 16));
+            GoblinWalking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 0, 0, 16, 16));
 
-            GoblinWalking.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 16, 0, 16, 16));
+            GoblinWalking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 16, 0, 16, 16));
 
-            GoblinWalking.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 32, 0, 16, 16));
+            GoblinWalking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 32, 0, 16, 16));
 
-            GoblinWalking.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 48, 0, 16, 16));
+            GoblinWalking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 48, 0, 16, 16));
 
-            GoblinWalking.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 64, 0, 16, 16));
+            GoblinWalking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 64, 0, 16, 16));
 
-            GoblinWalking.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 80, 0, 16, 16));
+            GoblinWalking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 80, 0, 16, 16));
 
-            GoblinStabbing.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 0, 32, 16, 16));
+            GoblinStabbing.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 0, 32, 16, 16));
 
-            GoblinStabbing.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 16, 32, 16, 16));
+            GoblinStabbing.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 16, 32, 16, 16));
 
-            GoblinStabbing.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 32, 32, 16, 16));
+            GoblinStabbing.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 32, 32, 16, 16));
 
-            GoblinStabbing.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 48, 32, 16, 16));
+            GoblinStabbing.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 48, 32, 16, 16));
             #endregion
 
             #region GoblinBomber
-            GoblinBomberIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 0, 32, 16, 16));
+            GoblinBomberIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 0, 32, 16, 16));
 
-            GoblinBomberIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 16, 32, 16, 16));
+            GoblinBomberIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 16, 32, 16, 16));
 
-            GoblinBomberIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 32, 32, 16, 16));
+            GoblinBomberIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 32, 32, 16, 16));
 
-            GoblinBomberIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 48, 32, 16, 16));
+            GoblinBomberIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 48, 32, 16, 16));
             #endregion
 
             #region Walls
-            WallIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 144, 448, 32, 32));
-            WallTopLeftIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 128, 0, 32, 32));
-            WallTopIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 160, 0, 32, 32));
-            WallTopRightIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 195, 0, 32, 32));
-            WallLeftIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 128, 32, 32, 32));
-            WallFieldIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 32, 32, 32, 32));
-            WallRightIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 195, 32, 32, 32));
-            WallBottomLeftIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 128, 64, 32, 32));
-            WallBottomIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 160, 64, 32, 32));
-            WallBottomRightIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 195, 64, 32, 32));
-            WallDirtIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 160, 32, 32, 32));
+            WallIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 144, 448, 32, 32));
 
-            CaveIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 32, 355, 32, 32));
+            WallTopLeftIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 128, 0, 32, 32));
+            
+            WallTopIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 160, 0, 32, 32));
+            
+            WallTopRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 195, 0, 32, 32));
+            
+            WallLeftIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 128, 32, 32, 32));
+            
+            WallFieldIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 32, 32, 32, 32));
+            
+            WallRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 195, 32, 32, 32));
+            
+            WallBottomLeftIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 128, 64, 32, 32));
+            
+            WallBottomIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 160, 64, 32, 32));
+            
+            WallBottomRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 195, 64, 32, 32));
+            
+            WallDirtIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 160, 32, 32, 32));
             #endregion
 
             #region Grass
-            GrassIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 32, 160, 32, 32));
-            GrassTopLeftIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 128, 128, 32, 32));
-            GrassTopIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 160, 128, 32, 32));
-            GrassTopRightIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 195, 128, 32, 32));
-            GrassLeftIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 128, 160, 32, 32));
-            GrassLeavesIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 160, 160, 32, 32));
-            GrassRightIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 195, 160, 32, 32));
-            GrassBottomLeftIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 128, 192, 32, 32));
-            GrassBottomIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 160, 192, 32, 32));
-            GrassBottomRightIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 195, 192, 32, 32));
-
-
-
-
-
-
-
-
+            GrassIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 32, 160, 32, 32));
+            
+            GrassTopLeftIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 128, 128, 32, 32));
+            
+            GrassTopIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 160, 128, 32, 32));
+            
+            GrassTopRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 195, 128, 32, 32));
+            
+            GrassLeftIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 128, 160, 32, 32));
+            
+            GrassLeavesIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 160, 160, 32, 32));
+            
+            GrassRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 195, 160, 32, 32));
+            
+            GrassBottomLeftIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 128, 192, 32, 32));
+            
+            GrassBottomIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 160, 192, 32, 32));
+            
+            GrassBottomRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 195, 192, 32, 32));
             #endregion
 
             #region Cave
-            CaveWallTopLeftIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 64, 0, 32, 32));
+            CaveIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 32, 355, 32, 32));
 
-            CaveWallHorizontalIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 96, 0, 32, 32));
+            CaveWallTopLeftIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 64, 0, 32, 32));
 
-            CaveWallTopRightIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 128, 0, 32, 32));
+            CaveWallHorizontalIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 96, 0, 32, 32));
 
-            CaveWallVerticalIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 64, 32, 32, 32));
+            CaveWallTopRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 128, 0, 32, 32));
 
-            CaveWallIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 96, 32, 32, 32));
+            CaveWallVerticalIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 64, 32, 32, 32));
 
-            CaveWallTopIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 128, 64, 32, 32));
+            CaveWallIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 96, 32, 32, 32));
 
-            CaveWallDarkIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 320, 128, 32, 32));
+            CaveWallTopIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 128, 64, 32, 32));
 
-            CaveWallDarkerIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 192, 160, 32, 32));
+            CaveWallDarkIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 320, 128, 32, 32));
 
+            CaveWallDarkerIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 192, 160, 32, 32));
 
+            CaveFloorLeftIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 128, 320, 32, 32));
 
-            CaveFloorLeftIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 128, 320, 32, 32));
+            CaveFloorIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 160, 320, 32, 32));
 
-            CaveFloorIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 160, 320, 32, 32));
-
-            CaveFloorRightIdle.Add(new AnimationFrame(new List<Hitbox>
-            {
-                new Hitbox(2, 3, new Vector2(1, 2)),
-                new Hitbox(6, 5, new Vector2(3, 0)),
-                new Hitbox(2, 3, new Vector2(9, 2)),
-                new Hitbox(12, 19, new Vector2(0, 5)),
-            }, 192, 320, 32, 32));
+            CaveFloorRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 192, 320, 32, 32));
             #endregion
         }
     }
