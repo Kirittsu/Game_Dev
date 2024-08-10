@@ -57,6 +57,8 @@ namespace Game_Dev.Managers
 
             character.Facing = facing;
 
+            direction = CollisionManager.MovementCollisionChecks(character, direction, GameStateManager.gameObjects);
+
             //apply everything
             character.MinPosition += direction;
             snelheid.Normalize();

@@ -36,6 +36,7 @@ namespace Game_Dev.Objects
         public new int Height { get { return (int)(CurrentFrame.Frame.Height * scale); } }
         public Vector2 Facing { get; set; }
         public AnimationFrame CurrentFrame { get; set; }
+        public bool isUnwalkable = true;
         public BaseObject()
         {
             GameStateManager.gameObjects.Add(this);
