@@ -25,19 +25,5 @@ namespace Game_Dev.Objects.GameObjects
         {
             base.Update(gameTime);
         }
-
-        public override bool Interaction(BaseObject gameObject)
-        {
-            if (gameObject == Origin || gameObject is Hero)
-            {
-                if (gameObject is Hero)
-                {
-                    GameStateManager.Remove(this);
-                }
-                return false;
-            }
-            GameStateManager.Remove(this);
-            return true;
-        }
     }
 }

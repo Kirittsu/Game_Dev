@@ -21,19 +21,5 @@ namespace Game_Dev.Characters
             MovementManager.Move(this, gameTime);
             this.CurrentFrame.Hitbox.Flip(this);
         }
-
-        public abstract bool Interaction(BaseObject gameObject);
-
-        public bool InteractWith(BaseObject gameObject)
-        {
-            bool interact = Interaction(gameObject);
-
-            if (interact)
-            {
-                return true;
-            }
-
-            return interact;
-        }
     }
 }
