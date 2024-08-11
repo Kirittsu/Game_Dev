@@ -58,6 +58,7 @@ namespace Game_Dev.Screens
             {"C6", delegate(Vector2 position){ new CaveWallTop(position); } },
             {"C7", delegate(Vector2 position){ new CaveWallDark(position); } },
             {"C8", delegate(Vector2 position){ new CaveWallDarker(position); } },
+            {"CV", delegate(Vector2 position){ new CaveVoid(position); } },
 
             {"T1", delegate(Vector2 position){ new CaveFloorLeft(position); } },
             {"T2", delegate(Vector2 position){ new CaveFloor(position); } },
