@@ -321,27 +321,27 @@ namespace Game_Dev.Managers
             #endregion
 
             #region Walls
-            WallIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 144, 448, 32, 32));
+            WallIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-8, -20)), 144, 448, 32, 32));
 
-            WallTopLeftIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 128, 0, 32, 32));
+            WallTopLeftIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 128, 0, 32, 32));
             
-            WallTopIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 160, 0, 32, 32));
+            WallTopIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 160, 0, 32, 32));
             
-            WallTopRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 195, 0, 32, 32));
+            WallTopRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 195, 0, 32, 32));
             
-            WallLeftIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 128, 32, 32, 32));
+            WallLeftIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 128, 32, 32, 32));
             
-            WallFieldIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 32, 32, 32, 32));
+            WallFieldIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 32, 32, 32, 32));
             
-            WallRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 195, 32, 32, 32));
+            WallRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 195, 32, 32, 32));
             
-            WallBottomLeftIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 128, 64, 32, 32));
+            WallBottomLeftIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 128, 64, 32, 32));
             
-            WallBottomIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 160, 64, 32, 32));
+            WallBottomIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 160, 64, 32, 32));
             
-            WallBottomRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 195, 64, 32, 32));
+            WallBottomRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 195, 64, 32, 32));
             
-            WallDirtIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 160, 32, 32, 32));
+            WallDirtIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 160, 32, 32, 32));
             #endregion
 
             #region Grass
@@ -367,7 +367,7 @@ namespace Game_Dev.Managers
             #endregion
 
             #region Cave
-            CaveIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 32, 355, 32, 32));
+            CaveIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, -30)), 32, 355, 32, 32));
 
             CaveWallTopLeftIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 64, 0, 32, 32));
 
