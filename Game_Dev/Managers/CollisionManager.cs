@@ -1,13 +1,17 @@
-﻿using Game_Dev.Interfaces;
+﻿using Game_Dev.Characters;
+using Game_Dev.Interfaces;
 using Game_Dev.Objects;
+using Game_Dev.Objects.GameObjects;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
+using System.Windows.Forms;
 
 namespace Game_Dev.Managers
 {
     public class CollisionManager
     {
-        public static Vector2 MovementCollisionChecks(BaseObject character, Vector2 direction, List<BaseObject> gameObjects)
+        public static Vector2 MovementCollisionChecks(Character character, Vector2 direction, List<BaseObject> gameObjects)
         {
             // First, resolve horizontal movement
             Vector2 newPosition = character.MinPosition + new Vector2(direction.X, 0);
@@ -26,11 +30,12 @@ namespace Game_Dev.Managers
             return direction;
         }
 
-        private static bool CheckCollision(BaseObject character, Vector2 newPosition, List<BaseObject> gameObjects)
+        private static bool CheckCollision(Character character, Vector2 newPosition, List<BaseObject> gameObjects)
         {
-            foreach (var gameObject in gameObjects)
+            var gameObjectsCopy = new List<BaseObject>(gameObjects);
+            foreach (var gameObject in gameObjectsCopy)
             {
-                if (character != gameObject && gameObject.isUnwalkable)
+                if (character != gameObject && gameObject.isUnwalkable && !GameStateManager.loading)
                 {
                     Hitbox ch = character.CurrentFrame.Hitbox;
                     Hitbox gh = gameObject.CurrentFrame.Hitbox;
@@ -46,11 +51,26 @@ namespace Game_Dev.Managers
 
                     if (h1.Intersects(h2))
                     {
+                        if (character is Hero && gameObject is Cave) GameStateManager.NextLevel(5);
+
                         return true; // Collision detected
+                    }
+
+                    if (character is Hero)
+                    {
+                        if (x1 + ch.Box.Width >= ScreenManager.ScreenWidth || y1 + ch.Box.Height >= ScreenManager.ScreenHeight)
+                        {
+                            if (GameStateManager.LevelIndex == 5) return true;
+
+                            else GameStateManager.NextLevel();
+                        }
+
+                        else if (x1 <= 0 || y1 <= 0) GameStateManager.NextLevel(GameStateManager.LevelIndex - 1);
                     }
                 }
             }
             return false; // No collision
         }
+
     }
 }
