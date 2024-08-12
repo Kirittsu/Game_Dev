@@ -30,14 +30,14 @@ namespace Game_Dev
             GameStateManager.gameElements = new List<GameElement>();
             GameStateManager.graphics = GraphicsDevice;
             GameStateManager.content = this.Content;
-            GameStateManager.LevelIndex = 3;
+            GameStateManager.LevelIndex = 1;
             GameStateManager.Font = Content.Load<SpriteFont>("Text");
 
             AnimationManager.Load();
 
             ScreenManager.ScreenHeight = Window.ClientBounds.Height;
             ScreenManager.ScreenWidth = Window.ClientBounds.Width;
-            ScreenManager.Load();
+            ScreenManager.Load(0);
         }
 
         protected override void LoadContent()

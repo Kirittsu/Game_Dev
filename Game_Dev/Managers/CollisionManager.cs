@@ -58,14 +58,18 @@ namespace Game_Dev.Managers
 
                     if (character is Hero)
                     {
-                        if (x1 + ch.Box.Width >= ScreenManager.ScreenWidth || y1 + ch.Box.Height >= ScreenManager.ScreenHeight)
+                        if (x1 + ch.Box.Width >= ScreenManager.ScreenWidth)
                         {
                             if (GameStateManager.LevelIndex == 5) return true;
-
-                            else GameStateManager.NextLevel();
+                            else GameStateManager.NextLevel(-1, 1);
                         }
-
-                        else if (x1 <= 0 || y1 <= 0) GameStateManager.NextLevel(GameStateManager.LevelIndex - 1);
+                        else if(y1 + ch.Box.Height >= ScreenManager.ScreenHeight)
+                        {
+                            if (GameStateManager.LevelIndex == 5) return true;
+                            else GameStateManager.NextLevel(-1, 2);
+                        }
+                        else if (y1 <= 0) GameStateManager.NextLevel(GameStateManager.LevelIndex - 1, 3);
+                        else if (x1 <= 0) GameStateManager.NextLevel(GameStateManager.LevelIndex - 1, 4);
                     }
                 }
             }

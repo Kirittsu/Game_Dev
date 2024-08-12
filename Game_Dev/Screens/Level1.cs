@@ -12,7 +12,7 @@ namespace Game_Dev.Screens
 {
     public class Level1 : BaseScene
     {
-        public override void LoadScene()
+        public override void LoadScene(int entrance)
         {
             Map = new string[,]
             {
@@ -49,7 +49,9 @@ namespace Game_Dev.Screens
             { "W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","WD","W5","W5","W5","W5" }
             };
 
-            new Hero(new Vector2(150, 300));
+            if (entrance == 4) new Hero(new Vector2(750, 300));
+            else new Hero(new Vector2(150, 300));
+
 
             GameStateManager.UIToggle = false;
         }

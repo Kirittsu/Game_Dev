@@ -8,7 +8,7 @@ namespace Game_Dev.Screens
 {
     public class EndScreen : BaseScene
     {
-        public override void LoadScene()
+        public override void LoadScene(int entrance)
         {
         }
     }

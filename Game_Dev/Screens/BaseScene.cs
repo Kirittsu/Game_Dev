@@ -67,7 +67,7 @@ namespace Game_Dev.Screens
 
         };
 
-        public abstract void LoadScene();
+        public abstract void LoadScene(int entrance);
         public string[,] Map { get; set; }
         public Texture2D Background { get; set; }
 

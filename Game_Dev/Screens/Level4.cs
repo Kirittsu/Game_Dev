@@ -11,7 +11,7 @@ namespace Game_Dev.Screens
 {
     public class Level4 : BaseScene
     {
-        public override void LoadScene()
+        public override void LoadScene(int entrance)
         {
             Map = new string[,]
 {

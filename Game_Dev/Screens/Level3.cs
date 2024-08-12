@@ -11,7 +11,7 @@ namespace Game_Dev.Screens
 {
     public class Level3 : BaseScene
     {
-        public override void LoadScene()
+        public override void LoadScene(int entrance)
         {
             Map = new string[,]
 {
@@ -48,7 +48,9 @@ namespace Game_Dev.Screens
         {"W5","WW","WW","WW","WW","WW","WW","G9","W5","W6","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","W4","WD","W5","W5","G1"}
 };
 
-            new Hero(new Vector2(10, 140));
+
+            if (entrance == 3) new Hero(new Vector2(450, 450));
+            else new Hero(new Vector2(10, 140));
 
             new Goblin(new Vector2(380, 150));
 

@@ -35,7 +35,7 @@ namespace Game_Dev.Managers
         {
             return LevelList[LevelIndex];
         }
-        public static void NextLevel(int index = -1)
+        public static void NextLevel(int index = -1, int entrance = 0)
         {
             if (index < 0)
             {
@@ -62,7 +62,7 @@ namespace Game_Dev.Managers
                 LevelIndex = index;
             }
 
-            ScreenManager.Load();
+            ScreenManager.Load(entrance);
         }
 
         public static void Remove(GameElement removable)

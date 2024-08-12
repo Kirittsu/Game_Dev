@@ -49,14 +49,14 @@ namespace Game_Dev.Managers
             }
         }
 
-        public static void Load()
+        public static void Load(int entrance)
         {
             if (!GameStateManager.loading)
             {
                 GameStateManager.loading = true;
                 GameStateManager.gameObjects.Clear();
                 GameStateManager.gameElements.Clear();
-                GameStateManager.CurrentScene().LoadScene();
+                GameStateManager.CurrentScene().LoadScene(entrance);
                 GameStateManager.CurrentScene().LoadMap();
             }
         }
