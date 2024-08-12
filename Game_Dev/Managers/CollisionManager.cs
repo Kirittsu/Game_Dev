@@ -53,6 +53,16 @@ namespace Game_Dev.Managers
                     {
                         if (character is Hero && gameObject is Cave) GameStateManager.NextLevel(5);
 
+                        if (character is Goblin && gameObject is Hero && character.Status == Status.Attacking)
+                        {
+                            GameStateManager.Remove(gameObject);
+                        }
+
+                        if (character is HeroAttack && (gameObject is Goblin || gameObject is GoblinBomber))
+                        {
+                            GameStateManager.Remove(gameObject);
+                        }
+
                         return true; // Collision detected
                     }
 

@@ -20,6 +20,7 @@ namespace Game_Dev.Managers
         public static List<AnimationFrame> HeroIdle = new();
         public static List<AnimationFrame> HeroWalking = new();
         public static List<AnimationFrame> HeroAttacking = new();
+        public static List<AnimationFrame> HeroAttackIdle = new();
         public static List<AnimationFrame> GoblinIdle = new();
         public static List<AnimationFrame> GoblinWalking = new();
         public static List<AnimationFrame> GoblinStabbing = new();
@@ -92,6 +93,9 @@ namespace Game_Dev.Managers
                             selectedList = HeroAttacking;
                             break;
                     }
+                    break;
+                case HeroAttack:
+                    selectedList = HeroAttackIdle;
                     break;
                 case Goblin:
                     switch (animationType)
@@ -246,7 +250,9 @@ namespace Game_Dev.Managers
                 else
                     animatable.currentFrameIndex++;
 
-                animatable.holdFrame = 30 / selectedList.Count;
+                if (requester is HeroAttack) animatable.holdFrame = 60 / selectedList.Count;
+
+                else animatable.holdFrame = 30 / selectedList.Count;
             }
 
             return frame;
@@ -282,6 +288,18 @@ namespace Game_Dev.Managers
             HeroAttacking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 32, 48, 16, 16));
 
             HeroAttacking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 48, 48, 16, 16));
+
+            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(0, 0)), 0, 230, 16, 16));
+
+            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(0, 0)), 16, 230, 16, 16));
+
+            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(0, 0)), 32, 230, 16, 16));
+
+            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(0, 0)), 48, 230, 16, 16));
+
+            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(0, 0)), 64, 230, 16, 16));
+
+            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(0, 0)), 80, 230, 16, 16));
             #endregion
 
             #region Goblin
@@ -305,13 +323,13 @@ namespace Game_Dev.Managers
 
             GoblinWalking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 80, 0, 16, 16));
 
-            GoblinStabbing.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 0, 32, 16, 16));
+            GoblinStabbing.Add(new AnimationFrame(new Hitbox(40, 16, new Vector2(0, 0)), 0, 32, 16, 16));
 
-            GoblinStabbing.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 16, 32, 16, 16));
+            GoblinStabbing.Add(new AnimationFrame(new Hitbox(40, 16, new Vector2(0, 0)), 16, 32, 16, 16));
 
-            GoblinStabbing.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 32, 32, 16, 16));
+            GoblinStabbing.Add(new AnimationFrame(new Hitbox(40, 16, new Vector2(0, 0)), 32, 32, 16, 16));
 
-            GoblinStabbing.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 48, 32, 16, 16));
+            GoblinStabbing.Add(new AnimationFrame(new Hitbox(40, 16, new Vector2(0, 0)), 48, 32, 16, 16));
             #endregion
 
             #region GoblinBomber

@@ -38,7 +38,7 @@ namespace Game_Dev.Managers
             {
                 if (direction.X == 0 && direction.Y == 0)
                 {
-                    if (state.IsKeyDown(Keys.C)) character.Status = Status.Attacking;
+                    if (state.IsKeyDown(Keys.C) && character is Hero) character.Status = Status.Attacking;
 
                     else character.Status = Status.Idle;
                 }

@@ -19,9 +19,7 @@ namespace Game_Dev.Characters
         public int currentFrameIndex { get; set; }
         public int holdFrame { get; set; }
 
-        public int Health { get { return health; } set { health = value; } }
-
-        private int health = 3;
+        public float AttackCooldown { get; set; }
 
         public Hero(Vector2 position)
         {
@@ -30,6 +28,21 @@ namespace Game_Dev.Characters
             Texture = GameStateManager.content.Load<Texture2D>("hero");
             Facing = new Vector2(1, 0);
             DrawOrder = 2;
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+
+            AttackCooldown -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+            if (Status == Status.Attacking && AttackCooldown <= 0)
+            {
+                if (this.Facing.X > 0) GameStateManager.gameObjects.Add(new HeroAttack(this.MinPosition + new Vector2(Width * 1.4f, Height / 2), this.Facing, this));
+
+                else GameStateManager.gameObjects.Add(new HeroAttack(this.MinPosition + new Vector2(-Width, Height / 2), this.Facing, this));
+
+                AttackCooldown = 0.525f;
+            }
         }
     }
 }
