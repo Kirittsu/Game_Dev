@@ -8,7 +8,7 @@ namespace Game_Dev.Screens
 {
     public class StartScreen : BaseScene
     {
-        public override void LoadScene()
+        public override void LoadScene(int entrance)
         {
             Map = new string[,]
             {

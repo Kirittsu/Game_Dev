@@ -30,16 +30,14 @@ namespace Game_Dev
             GameStateManager.gameElements = new List<GameElement>();
             GameStateManager.graphics = GraphicsDevice;
             GameStateManager.content = this.Content;
-            GameStateManager.LevelIndex = 0;
+            GameStateManager.LevelIndex = 1;
             GameStateManager.Font = Content.Load<SpriteFont>("Text");
 
             AnimationManager.Load();
 
-            //_deelRectangle = new Rectangle(schuifOp_X,80, 16, 16);
-
             ScreenManager.ScreenHeight = Window.ClientBounds.Height;
             ScreenManager.ScreenWidth = Window.ClientBounds.Width;
-            ScreenManager.Load();
+            ScreenManager.Load(0);
         }
 
         protected override void LoadContent()
@@ -64,9 +62,6 @@ namespace Game_Dev
             _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
 
             ScreenManager.Draw(_spriteBatch);
-
-            //.Draw -> _texture = texture, Vector2 is positie, _deelRectangle pakt stuk uit spritesheet, Color.White MOET!
-            //_spriteBatch.Draw(hero.Texture,hero.position, _deelRectangle, Color.White, 0, new Vector2(1,1), hero.scale, SpriteEffects.None, 1);
 
             _spriteBatch.End();
 

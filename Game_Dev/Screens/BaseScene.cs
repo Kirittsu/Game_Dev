@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Game_Dev.Objects;
 
 namespace Game_Dev.Screens
 {
@@ -57,6 +58,7 @@ namespace Game_Dev.Screens
             {"C6", delegate(Vector2 position){ new CaveWallTop(position); } },
             {"C7", delegate(Vector2 position){ new CaveWallDark(position); } },
             {"C8", delegate(Vector2 position){ new CaveWallDarker(position); } },
+            {"CV", delegate(Vector2 position){ new CaveVoid(position); } },
 
             {"T1", delegate(Vector2 position){ new CaveFloorLeft(position); } },
             {"T2", delegate(Vector2 position){ new CaveFloor(position); } },
@@ -65,7 +67,7 @@ namespace Game_Dev.Screens
 
         };
 
-        public abstract void LoadScene();
+        public abstract void LoadScene(int entrance);
         public string[,] Map { get; set; }
         public Texture2D Background { get; set; }
 
@@ -80,9 +82,6 @@ namespace Game_Dev.Screens
                         if (objAbbreviation[Map[y, x]] != null)
                         {
                             var newObject = objAbbreviation[Map[y, x]].DynamicInvoke(new Vector2(30 * x, 30 * y));
-                            if (y != 0 && newObject is Wall newBlock && Map[y - 1, x] != "0")
-                            {
-                            }
                         }
                     }
                 }
