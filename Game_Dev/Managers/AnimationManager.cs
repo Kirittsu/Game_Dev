@@ -25,6 +25,7 @@ namespace Game_Dev.Managers
         public static List<AnimationFrame> GoblinStabbing = new();
         public static List<AnimationFrame> GoblinBomberIdle = new();
         public static List<AnimationFrame> SpikesIdle = new();
+        public static List<AnimationFrame> ControlDisplayIdle = new();
 
         #region wall
         public static List<AnimationFrame> WallIdle = new();
@@ -235,6 +236,9 @@ namespace Game_Dev.Managers
                     selectedList = SpikesIdle;
                     break;
 
+                case ControlDisplay:
+                    selectedList = ControlDisplayIdle;
+                    break;
             }
 
             frame = selectedList[index];
@@ -396,6 +400,10 @@ namespace Game_Dev.Managers
             CaveFloorRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 192, 320, 32, 32));
 
             CaveVoidIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 0, 0, 32, 32));
+            #endregion
+
+            #region UI
+            ControlDisplayIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 0, 0, 388, 385));
             #endregion
         }
     }
