@@ -21,7 +21,7 @@ namespace Game_Dev.Managers
             var direction = Vector2.Zero;
 
 
-            if (character is Hero)
+            if (character is GoblinBomber)
             {
                 if (state.IsKeyDown(Keys.Left)) direction.X -= 3.5f;
 
@@ -38,7 +38,7 @@ namespace Game_Dev.Managers
             {
                 if (direction.X == 0 && direction.Y == 0)
                 {
-                    if (state.IsKeyDown(Keys.C) && character is Hero) character.Status = Status.Attacking;
+                    if (state.IsKeyDown(Keys.C) && character is GoblinBomber) character.Status = Status.Attacking;
 
                     else character.Status = Status.Idle;
                 }

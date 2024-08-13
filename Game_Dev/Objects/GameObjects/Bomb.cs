@@ -22,6 +22,7 @@ namespace Game_Dev.Objects.GameObjects
             Texture = GameStateManager.content.Load<Texture2D>("bomb");
             MinPosition = position;
             Origin = origin;
+            scale = 2;
         }
 
         public override void Update(GameTime gameTime)
@@ -29,7 +30,7 @@ namespace Game_Dev.Objects.GameObjects
             base.Update(gameTime);
 
             // If animation is done delete this object
-            if (this.currentFrameIndex == 2) GameStateManager.gameObjects.Remove(this);
+            if (this.currentFrameIndex == 8) GameStateManager.gameObjects.Remove(this);
         }
     }
 }
