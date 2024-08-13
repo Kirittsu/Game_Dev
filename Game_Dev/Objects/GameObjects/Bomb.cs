@@ -30,7 +30,7 @@ namespace Game_Dev.Objects.GameObjects
             base.Update(gameTime);
 
             // If animation is done delete this object
-            if (this.currentFrameIndex == 8) GameStateManager.gameObjects.Remove(this);
+            if (this.currentFrameIndex == 9) GameStateManager.gameObjects.Remove(this);
         }
     }
 }

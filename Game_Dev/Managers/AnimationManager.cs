@@ -380,6 +380,8 @@ namespace Game_Dev.Managers
             BombIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 56, 0, 8, 8));
 
             BombIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 39, 0, 1, 1));
+
+            BombIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 39, 0, 1, 1));
             #endregion
 
             #region Walls
