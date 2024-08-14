@@ -345,19 +345,19 @@ namespace Game_Dev.Managers
             
             WallTopIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -3)), 160, 0, 32, 32));
             
-            WallTopRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -3)), 195, 0, 32, 32));
+            WallTopRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -3)), 192, 0, 32, 32));
             
             WallLeftIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 128, 32, 32, 32));
             
             WallFieldIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 32, 32, 32, 32));
             
-            WallRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 195, 32, 32, 32));
+            WallRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 192, 32, 32, 32));
             
             WallBottomLeftIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 128, 64, 32, 32));
             
             WallBottomIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 160, 64, 32, 32));
             
-            WallBottomRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 195, 64, 32, 32));
+            WallBottomRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 192, 64, 32, 32));
             
             WallDirtIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-10, -15)), 160, 32, 32, 32));
             #endregion
@@ -369,19 +369,19 @@ namespace Game_Dev.Managers
             
             GrassTopIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 160, 128, 32, 32));
             
-            GrassTopRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 195, 128, 32, 32));
+            GrassTopRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 192, 128, 32, 32));
             
             GrassLeftIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 128, 160, 32, 32));
             
             GrassLeavesIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 160, 160, 32, 32));
             
-            GrassRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 195, 160, 32, 32));
+            GrassRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 192, 160, 32, 32));
             
             GrassBottomLeftIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 128, 192, 32, 32));
             
             GrassBottomIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 160, 192, 32, 32));
             
-            GrassBottomRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 195, 192, 32, 32));
+            GrassBottomRightIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(0, 0)), 192, 192, 32, 32));
             #endregion
 
             #region Cave
