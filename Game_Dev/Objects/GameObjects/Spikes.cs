@@ -13,7 +13,7 @@ namespace Game_Dev.Objects.GameObjects
 
         private double timeSinceLastFrame;
         private double spikeTimer;
-        private double holdLoweredDuration = 2.0;
+        private double holdLoweredDuration = 1.2;
         private double holdExtendedDuration = 1.0;
         public bool isExtended;
 

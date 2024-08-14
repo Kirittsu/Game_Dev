@@ -52,7 +52,7 @@ namespace Game_Dev.Managers
                 {
                     if (h1.Intersects(h2))
                     {
-                        if (character is Hero && gameObject is Cave) GameStateManager.NextLevel(5);
+                        if (character is Hero && gameObject is Cave) GameStateManager.NextLevel(6);
 
                         return true; // Collision detected
                     }
@@ -61,16 +61,23 @@ namespace Game_Dev.Managers
                     {
                         if (x1 + ch.Box.Width >= ScreenManager.ScreenWidth)
                         {
-                            if (GameStateManager.LevelIndex == 5) return true;
+                            if (GameStateManager.LevelIndex == 5) GameStateManager.NextLevel(GameStateManager.LevelIndex - 1, 3);
                             else GameStateManager.NextLevel(-1, 1);
                         }
-                        else if(y1 + ch.Box.Height >= ScreenManager.ScreenHeight)
+                        else if (y1 + ch.Box.Height >= ScreenManager.ScreenHeight)
                         {
-                            if (GameStateManager.LevelIndex == 5) return true;
+                            if (GameStateManager.LevelIndex == 6) return true;
                             else GameStateManager.NextLevel(-1, 2);
                         }
                         else if (y1 <= 0) GameStateManager.NextLevel(GameStateManager.LevelIndex - 1, 3);
-                        else if (x1 <= 0) GameStateManager.NextLevel(GameStateManager.LevelIndex - 1, 4);
+                        else if (x1 <= 0)
+                        {
+                            if (GameStateManager.LevelIndex == 4)
+                            {
+                                GameStateManager.NextLevel(-1, 2);
+                            } else
+                            GameStateManager.NextLevel(GameStateManager.LevelIndex - 1, 4);
+                        }
                     }
                 }
                 if (character is Hero && h1.Intersects(h2)) 
