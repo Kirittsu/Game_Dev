@@ -1,11 +1,7 @@
 ﻿using Game_Dev.Characters;
 using Game_Dev.Managers;
+using Game_Dev.Objects.GameObjects;
 using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Game_Dev.Screens
 {
@@ -53,6 +49,23 @@ namespace Game_Dev.Screens
             new Goblin(new Vector2(400, 350));
 
             new Goblin(new Vector2(530, 300));
+
+
+            for (int i = 0; i < 12; i++)
+            {
+                float x = 320 + (i * 32);
+                new Spikes(new Vector2(x, 226));
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 7; j++)
+                {
+                    float x = 192 + (i * 32);
+                    float y = 255 + (j * 32);
+                    new Spikes(new Vector2(x, y));
+                }
+            }
 
             GameStateManager.UIToggle = false;
         }
