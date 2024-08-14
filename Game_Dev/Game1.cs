@@ -24,6 +24,10 @@ namespace Game_Dev
 
         protected override void Initialize()
         {
+            _graphics.PreferredBackBufferWidth = 27 * 32;
+            _graphics.PreferredBackBufferHeight = 16 * 32;
+            _graphics.ApplyChanges();
+
             base.Initialize();
 
             GameStateManager.gameObjects = new List<BaseObject>();
