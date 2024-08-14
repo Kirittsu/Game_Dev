@@ -329,13 +329,13 @@ namespace Game_Dev.Managers
             #endregion
 
             #region Spikes
-            SpikesIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 481, 65, 32, 32));
+            SpikesIdle.Add(new AnimationFrame(new Hitbox(20, 20, new Vector2(-6, -6)), 481, 65, 32, 32));
 
-            SpikesIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 449, 65, 32, 32));
+            SpikesIdle.Add(new AnimationFrame(new Hitbox(20, 20, new Vector2(-6, -6)), 449, 65, 32, 32));
 
-            SpikesIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 417, 65, 32, 32));
+            SpikesIdle.Add(new AnimationFrame(new Hitbox(20, 20, new Vector2(-6, -6)), 417, 65, 32, 32));
 
-            SpikesIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 385, 65, 32, 32));
+            SpikesIdle.Add(new AnimationFrame(new Hitbox(20, 20, new Vector2(-6, -6)), 385, 65, 32, 32));
             #endregion
 
             #region Walls

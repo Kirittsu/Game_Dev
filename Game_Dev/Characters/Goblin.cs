@@ -20,7 +20,7 @@ namespace Game_Dev.Characters
             MinPosition = position;
             Texture = GameStateManager.content.Load<Texture2D>("goblin");
             Facing = new Vector2(1, 0);
-            DrawOrder = 1;
+            DrawOrder = 2;
         }
 
         public void Update(GameTime gameTime, Hero hero, List<BaseObject> gameObjects)

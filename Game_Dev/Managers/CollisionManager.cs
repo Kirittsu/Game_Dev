@@ -48,13 +48,18 @@ namespace Game_Dev.Managers
                 Rectangle h1 = new Rectangle((int)x1, (int)y1, ch.Box.Width, ch.Box.Height);
                 Rectangle h2 = new Rectangle((int)x2, (int)y2, gh.Box.Width, gh.Box.Height);
 
-                if (character != gameObject && gameObject.isUnwalkable && !GameStateManager.loading)
+                if (character != gameObject && !GameStateManager.loading)
                 {
-                    if (h1.Intersects(h2))
+                    if (h1.Intersects(h2) && gameObject.isUnwalkable)
                     {
                         if (character is Hero && gameObject is Cave) GameStateManager.NextLevel(6);
 
                         return true; // Collision detected
+                    }
+
+                    if (h1.Intersects(h2) && character is Goblin && gameObject is Spikes spikes && spikes.isExtended)
+                    {
+                        return true;
                     }
 
                     if (character is Hero)
