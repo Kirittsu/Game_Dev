@@ -328,6 +328,16 @@ namespace Game_Dev.Managers
             GoblinBomberIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 48, 32, 16, 16));
             #endregion
 
+            #region Spikes
+            SpikesIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 481, 65, 32, 32));
+
+            SpikesIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 449, 65, 32, 32));
+
+            SpikesIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 417, 65, 32, 32));
+
+            SpikesIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 385, 65, 32, 32));
+            #endregion
+
             #region Walls
             WallIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-8, -20)), 144, 448, 32, 32));
 
