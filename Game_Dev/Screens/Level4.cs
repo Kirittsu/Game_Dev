@@ -59,7 +59,7 @@ namespace Game_Dev.Screens
                 new Spikes(new Vector2(x, 226));
             }
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 2; i++)
             {
                 for (int j = 0; j < 7; j++)
                 {

@@ -50,7 +50,7 @@ namespace Game_Dev.Screens
 };
 
 
-            if (entrance == 3) new Hero(new Vector2(450, 450));
+            if (entrance == 3) new Hero(new Vector2(450, 470));
             else new Hero(new Vector2(10, 140));
 
             if (!Key.keyObtained)

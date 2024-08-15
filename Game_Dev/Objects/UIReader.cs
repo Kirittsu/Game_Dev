@@ -14,10 +14,10 @@ namespace Game_Dev.Objects
     {
         public void ReadInput()
         {
-            KeyboardState keyboardState = Keyboard.GetState();
+            
             Vector2 direction = Vector2.Zero;
 
-            if (keyboardState.IsKeyDown(Keys.Enter)) GameStateManager.NextLevel();
+            //if (keyboardState.IsKeyDown(Keys.Enter)) GameStateManager.NextLevel();
         }
     }
 }

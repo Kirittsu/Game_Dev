@@ -28,7 +28,8 @@ namespace Game_Dev.Managers
             new Level4(),
             new Level5(),
             new Level6(),
-            new EndScreen()
+            new EndScreen(),
+            new YouWin()
         };
         public static int LevelIndex = 0;
         private static int currentLevel;
@@ -40,7 +41,7 @@ namespace Game_Dev.Managers
         {
             if (index < 0)
             {
-                if (LevelIndex == 6)
+                if (LevelIndex == 8)
                 {
                     LevelIndex = 0;
                 }
