@@ -45,6 +45,8 @@ namespace Game_Dev.Screens
         };
 
             new Hero(new Vector2(800, 420));
+            
+            if (Key.keyObtained == false) new Key(new Vector2(32, 130));
 
             GameStateManager.UIToggle = false;
         }

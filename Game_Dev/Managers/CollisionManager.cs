@@ -52,7 +52,16 @@ namespace Game_Dev.Managers
                 {
                     if (h1.Intersects(h2) && gameObject.isUnwalkable)
                     {
-                        if (character is Hero && gameObject is Cave) GameStateManager.NextLevel(6);
+                        if (character is Hero)
+                        {
+                            if (gameObject is Cave) GameStateManager.NextLevel(6);
+                            if (gameObject is Key) 
+                            { 
+                                GameStateManager.Remove(gameObject);
+                                Key.keyObtained = true;
+                            }
+                        }
+                        
 
                         return true; // Collision detected
                     }
