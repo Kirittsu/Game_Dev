@@ -27,6 +27,7 @@ namespace Game_Dev.Managers
             new Level3(),
             new Level4(),
             new Level5(),
+            new Level6(),
             new EndScreen()
         };
         public static int LevelIndex = 0;

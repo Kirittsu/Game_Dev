@@ -3,6 +3,7 @@ using Game_Dev.Interfaces;
 using Game_Dev.Objects;
 using Game_Dev.Objects.GameObjects;
 using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
 using System.Windows.Forms;
@@ -35,23 +36,23 @@ namespace Game_Dev.Managers
             var gameObjectsCopy = new List<BaseObject>(gameObjects);
             foreach (var gameObject in gameObjectsCopy)
             {
-                if (character != gameObject && gameObject.isUnwalkable && !GameStateManager.loading)
+                Hitbox ch = character.CurrentFrame.Hitbox;
+                Hitbox gh = gameObject.CurrentFrame.Hitbox;
+
+                float x1 = newPosition.X + ch.Offset.X;
+                float y1 = newPosition.Y + ch.Offset.Y;
+
+                float x2 = gameObject.MinPosition.X + gh.Offset.X;
+                float y2 = gameObject.MinPosition.Y + gh.Offset.Y;
+
+                Rectangle h1 = new Rectangle((int)x1, (int)y1, ch.Box.Width, ch.Box.Height);
+                Rectangle h2 = new Rectangle((int)x2, (int)y2, gh.Box.Width, gh.Box.Height);
+
+                if (character != gameObject && !GameStateManager.loading)
                 {
-                    Hitbox ch = character.CurrentFrame.Hitbox;
-                    Hitbox gh = gameObject.CurrentFrame.Hitbox;
-
-                    float x1 = newPosition.X + ch.Offset.X;
-                    float y1 = newPosition.Y + ch.Offset.Y;
-
-                    float x2 = gameObject.MinPosition.X + gh.Offset.X;
-                    float y2 = gameObject.MinPosition.Y + gh.Offset.Y;
-
-                    Rectangle h1 = new Rectangle((int)x1, (int)y1, ch.Box.Width, ch.Box.Height);
-                    Rectangle h2 = new Rectangle((int)x2, (int)y2, gh.Box.Width, gh.Box.Height);
-
-                    if (h1.Intersects(h2))
+                    if (h1.Intersects(h2) && gameObject.isUnwalkable)
                     {
-                        if (character is Hero && gameObject is Cave) GameStateManager.NextLevel(5);
+                        if (character is Hero && gameObject is Cave) GameStateManager.NextLevel(6);
 
                         if (character is Goblin && gameObject is Hero && character.Status == Status.Attacking)
                         {
@@ -66,22 +67,42 @@ namespace Game_Dev.Managers
                         return true; // Collision detected
                     }
 
+                    if (h1.Intersects(h2) && character is Goblin && gameObject is Spikes spikes && spikes.isExtended)
+                    {
+                        return true;
+                    }
+
                     if (character is Hero)
                     {
                         if (x1 + ch.Box.Width >= ScreenManager.ScreenWidth)
                         {
-                            if (GameStateManager.LevelIndex == 5) return true;
+                            if (GameStateManager.LevelIndex == 5) GameStateManager.NextLevel(GameStateManager.LevelIndex - 1, 3);
                             else GameStateManager.NextLevel(-1, 1);
                         }
-                        else if(y1 + ch.Box.Height >= ScreenManager.ScreenHeight)
+                        else if (y1 + ch.Box.Height >= ScreenManager.ScreenHeight)
                         {
-                            if (GameStateManager.LevelIndex == 5) return true;
+                            if (GameStateManager.LevelIndex == 6) return true;
                             else GameStateManager.NextLevel(-1, 2);
                         }
                         else if (y1 <= 0) GameStateManager.NextLevel(GameStateManager.LevelIndex - 1, 3);
-                        else if (x1 <= 0) GameStateManager.NextLevel(GameStateManager.LevelIndex - 1, 4);
+                        else if (x1 <= 0)
+                        {
+                            if (GameStateManager.LevelIndex == 4)
+                            {
+                                GameStateManager.NextLevel(-1, 2);
+                            } else
+                            GameStateManager.NextLevel(GameStateManager.LevelIndex - 1, 4);
+                        }
                     }
                 }
+                if (character is Hero && h1.Intersects(h2)) 
+                {
+                    if (gameObject is Spikes spikes && spikes.isExtended == true)
+                    {
+                        throw new NotImplementedException();
+                    }
+                }
+
             }
             return false; // No collision
         }

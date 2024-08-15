@@ -13,15 +13,19 @@ namespace Game_Dev.Objects.UIElements
     {
         public string Content { get; set; }
 
-        public Text(Vector2 position, string content)
+        private Color textColor = Color.Black;
+
+        public Text(Vector2 position, string content, Color textColor)
         {
             MinPosition = position;
             Content = content;
+            DrawOrder = 4;
+            this.textColor = textColor;
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(GameStateManager.Font, Content, MinPosition, Color.Black);
+            spriteBatch.DrawString(GameStateManager.Font, Content, MinPosition, textColor);
         }
     }
 }

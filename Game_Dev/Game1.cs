@@ -24,13 +24,17 @@ namespace Game_Dev
 
         protected override void Initialize()
         {
+            _graphics.PreferredBackBufferWidth = 27 * 32;
+            _graphics.PreferredBackBufferHeight = 16 * 32;
+            _graphics.ApplyChanges();
+
             base.Initialize();
 
             GameStateManager.gameObjects = new List<BaseObject>();
             GameStateManager.gameElements = new List<GameElement>();
             GameStateManager.graphics = GraphicsDevice;
             GameStateManager.content = this.Content;
-            GameStateManager.LevelIndex = 1;
+            GameStateManager.LevelIndex = 0;
             GameStateManager.Font = Content.Load<SpriteFont>("Text");
 
             AnimationManager.Load();

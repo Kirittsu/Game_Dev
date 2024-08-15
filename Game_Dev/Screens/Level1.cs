@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Game_Dev.Characters;
 using Microsoft.Xna.Framework;
+using Game_Dev.Objects.GameObjects.Walls;
+using Game_Dev.Objects.UIElements;
 
 namespace Game_Dev.Screens
 {
@@ -55,6 +57,11 @@ namespace Game_Dev.Screens
             new GoblinBomber(new Vector2(300, 300));
 
             GameStateManager.UIToggle = false;
+
+            new ControlDisplay(new Vector2(20, 20));
+
+            new Text(new Vector2(170, 37), "Move", Color.White);
+            new Text(new Vector2(150, 114), "Attack", Color.White);
         }
     }
 }
