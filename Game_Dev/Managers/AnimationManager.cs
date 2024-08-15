@@ -322,17 +322,17 @@ namespace Game_Dev.Managers
 
             HeroAttacking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 48, 48, 16, 16));
 
-            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(-8, -4.5f)), 0, 230, 16, 16));
+            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 12, new Vector2(-8, -9)), 0, 230, 16, 16));
 
-            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(-8, -4.5f)), 16, 230, 16, 16));
+            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 12, new Vector2(-8, -9)), 16, 230, 16, 16));
 
-            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(-8, -4.5f)), 32, 230, 16, 16));
+            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 12, new Vector2(-8, -9)), 32, 230, 16, 16));
 
-            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(-8, -4.5f)), 48, 230, 16, 16));
+            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 12, new Vector2(-8, -9)), 48, 230, 16, 16));
 
-            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(-8, -4.5f)), 64, 230, 16, 16));
+            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 12, new Vector2(-8, -9)), 64, 230, 16, 16));
 
-            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(-8, -4.5f)), 80, 230, 16, 16));
+            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 12, new Vector2(-8, -9)), 80, 230, 16, 16));
 
             HeroDarknessIdle.Add(new AnimationFrame(new Hitbox(0, 0, new Vector2(0, 0)), 0, 0, 1728, 1024));
             #endregion
