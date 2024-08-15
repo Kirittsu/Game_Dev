@@ -20,6 +20,7 @@ namespace Game_Dev.Managers
         public static List<AnimationFrame> HeroIdle = new();
         public static List<AnimationFrame> HeroWalking = new();
         public static List<AnimationFrame> HeroAttacking = new();
+        public static List<AnimationFrame> HeroDarknessIdle = new();
         public static List<AnimationFrame> GoblinIdle = new();
         public static List<AnimationFrame> GoblinWalking = new();
         public static List<AnimationFrame> GoblinStabbing = new();
@@ -236,6 +237,10 @@ namespace Game_Dev.Managers
                     selectedList = SpikesIdle;
                     break;
 
+                case HeroDarkness:
+                    selectedList = HeroDarknessIdle;
+                    break;
+
                 case ControlDisplay:
                     selectedList = ControlDisplayIdle;
                     break;
@@ -286,6 +291,8 @@ namespace Game_Dev.Managers
             HeroAttacking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 32, 48, 16, 16));
 
             HeroAttacking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 48, 48, 16, 16));
+
+            HeroDarknessIdle.Add(new AnimationFrame(new Hitbox(0, 0, new Vector2(0, 0)), 0, 0, 1728, 1024));
             #endregion
 
             #region Goblin

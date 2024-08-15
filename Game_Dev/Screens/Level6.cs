@@ -49,7 +49,7 @@ namespace Game_Dev.Screens
             {"C2","C2","C2","C2","C2","C2","C2","CV","CV","CV","CV","T1","T2","T2","T3","CV","CV","CV","CV","C5","C5","C5","C5","C5","C5","C5","C5"}
             };
 
-            new Hero(new Vector2(400, 460));
+            new HeroDarkness(new Vector2(0, 0), new Hero(new Vector2(400, 460)));
 
             var spikeRegions = new (int startX, int startY, int width, int height)[]
             {
