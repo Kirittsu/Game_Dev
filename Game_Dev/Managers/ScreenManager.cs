@@ -47,6 +47,11 @@ namespace Game_Dev.Managers
                         {
                             goblin.Update(gameTime, hero, GameStateManager.gameObjects);
                         }
+
+                        if (character is GoblinBomber goblinBomber && hero != null)
+                        {
+                            goblinBomber.Update(gameTime, hero, GameStateManager.gameObjects);
+                        }
                     }
 
                     if (gObject is IAnimate animatable)

@@ -14,6 +14,8 @@ namespace Game_Dev.Characters
 
         private float detectionRange = 200f;
 
+        private float attackRange = 50f;
+
         public Goblin(Vector2 position)
         {
             scale = 2;
@@ -25,10 +27,21 @@ namespace Game_Dev.Characters
 
         public void Update(GameTime gameTime, Hero hero, List<BaseObject> gameObjects)
         {
+            base.Update(gameTime);
+
             float distanceToHero = Vector2.Distance(hero.MinPosition, this.MinPosition);
 
             if (distanceToHero <= detectionRange)
             {
+                if (distanceToHero < attackRange)
+                {
+                    if (Status != Status.Attacking) Status = Status.Attacking;
+                }
+                else
+                {
+                    if (Status != Status.Walking) Status = Status.Walking;
+                }
+
                 Vector2 direction = hero.MinPosition - this.MinPosition;
                 direction.Normalize();
                 direction *= 2f;
@@ -38,8 +51,13 @@ namespace Game_Dev.Characters
 
                 if (direction.X != 0) this.Facing = new Vector2(direction.X, 0);
             }
-
-            base.Update(gameTime);
+            else
+            {
+                if (this.Status != Status.Idle)
+                {
+                    this.Status = Status.Idle;
+                }
+            }
         }
     }
 }
