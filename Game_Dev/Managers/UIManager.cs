@@ -11,17 +11,11 @@ namespace Game_Dev.Managers
 {
     public class UIManager
     {
-        private static UIReader UIControls = new();
         private static int Cooldown;
         public static void Update(GameTime gameTime)
         {
-            if (Cooldown < 0)
-            {
                 KeyboardState state = Keyboard.GetState();
                 if (state.IsKeyDown(Keys.Space)) GameStateManager.NextLevel();
-
-                Cooldown = 15;
-            }
 
             Cooldown--;
         }
