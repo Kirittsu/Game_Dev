@@ -17,7 +17,7 @@ namespace Game_Dev.Screens
         {
             Background = GameStateManager.content.Load<Texture2D>("gameover");
             GameStateManager.UIToggle = true;
-            new Text(new Vector2(220, 400), "Press Spacebar to Continue", Color.Black);
+            new Text(new Vector2(240, 400), "Press Spacebar to Continue", Color.Black);
         }
     }
 }

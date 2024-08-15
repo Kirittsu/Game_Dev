@@ -81,7 +81,7 @@ namespace Game_Dev.Screens
                     {
                         if (objAbbreviation[Map[y, x]] != null)
                         {
-                            var newObject = objAbbreviation[Map[y, x]].DynamicInvoke(new Vector2(30 * x, 30 * y));
+                            var newObject = objAbbreviation[Map[y, x]].DynamicInvoke(new Vector2(32 * x, 32 * y));
                         }
                     }
                 }

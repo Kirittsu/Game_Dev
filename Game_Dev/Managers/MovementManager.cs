@@ -17,7 +17,7 @@ namespace Game_Dev.Managers
         public static void Move(Character character, GameTime gameTime)
         {
             KeyboardState state = Keyboard.GetState();
-            
+
             var direction = Vector2.Zero;
 
 
@@ -32,6 +32,7 @@ namespace Game_Dev.Managers
                 if (state.IsKeyDown(Keys.Down)) direction.Y += 3.5f;
             }
 
+            snelheid.Normalize();
             direction *= snelheid;
 
             if (character is IAnimate)
@@ -53,15 +54,21 @@ namespace Game_Dev.Managers
 
             Vector2 facing = character.Facing;
 
-            if (direction.X != 0) facing.X = direction.X;
+            if (character is Hero) {
+                if (direction.X != 0) facing.X = direction.X;
 
-            character.Facing = facing;
+                character.Facing = facing;
 
-            direction = CollisionManager.MovementCollisionChecks(character, direction, GameStateManager.gameObjects);
+                direction = CollisionManager.MovementCollisionChecks(character, direction, GameStateManager.gameObjects);
 
-            //apply everything
-            character.MinPosition += direction;
-            snelheid.Normalize();
+                //apply everything
+                character.MinPosition += direction;
+            }
+
+            if (character is HeroDarkness darkness)
+            {
+                darkness.MinPosition = darkness.hero.MinPosition - new Vector2(840, 510);
+            }
         }
     }
 }
