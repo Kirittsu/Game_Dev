@@ -54,8 +54,6 @@ namespace Game_Dev.Screens
             if (entrance == 4) new Hero(new Vector2(750, 300));
             else new Hero(new Vector2(150, 300));
 
-            new GoblinBomber(new Vector2(300, 300));
-
             GameStateManager.UIToggle = false;
 
             new ControlDisplay(new Vector2(20, 20));

@@ -30,16 +30,10 @@ namespace Game_Dev.Managers
                 if (state.IsKeyDown(Keys.Up)) direction.Y -= 3.5f;
 
                 if (state.IsKeyDown(Keys.Down)) direction.Y += 3.5f;
-            }
 
-            snelheid.Normalize();
-            direction *= snelheid;
-
-            if (character is IAnimate)
-            {
                 if (direction.X == 0 && direction.Y == 0)
                 {
-                    if (state.IsKeyDown(Keys.C) && character is Hero) character.Status = Status.Attacking;
+                    if (state.IsKeyDown(Keys.C)) character.Status = Status.Attacking;
 
                     else character.Status = Status.Idle;
                 }
@@ -51,6 +45,9 @@ namespace Game_Dev.Managers
                     else character.Status = Status.Walking;
                 }
             }
+
+            snelheid.Normalize();
+            direction *= snelheid;
 
             Vector2 facing = character.Facing;
 
