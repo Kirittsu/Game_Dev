@@ -28,6 +28,7 @@ namespace Game_Dev.Managers
         public static List<AnimationFrame> SpikesIdle = new();
         public static List<AnimationFrame> ControlDisplayIdle = new();
         public static List<AnimationFrame> KeyIdle = new();
+        public static List<AnimationFrame> ChestIdle = new();
 
         #region wall
         public static List<AnimationFrame> WallIdle = new();
@@ -253,6 +254,10 @@ namespace Game_Dev.Managers
                 case Key:
                     selectedList = KeyIdle;
                     break;
+
+                case Chest:
+                    selectedList = ChestIdle;
+                    break;
             }
 
             frame = selectedList[index];
@@ -354,7 +359,7 @@ namespace Game_Dev.Managers
             SpikesIdle.Add(new AnimationFrame(new Hitbox(20, 20, new Vector2(-6, -6)), 385, 65, 32, 32));
             #endregion
 
-            #region key
+            #region Key
             KeyIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 0, 0, 32, 32));
 
             KeyIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 32, 0, 32, 32));
@@ -376,6 +381,31 @@ namespace Game_Dev.Managers
             KeyIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 288, 0, 32, 32));
             #endregion
 
+            #region Chest
+            ChestIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 0, 0, 16, 8));
+
+            ChestIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 16, 0, 16, 8));
+
+            ChestIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 32, 0, 16, 8));
+
+            ChestIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 48, 0, 16, 8));
+
+            ChestIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 64, 0, 16, 8));
+
+            ChestIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 80, 0, 16, 8));
+
+            ChestIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 96, 0, 16, 8));
+
+            ChestIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 112, 0, 16, 8));
+
+            ChestIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 128, 0, 16, 8));
+
+            ChestIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 144, 0, 16, 8));
+
+            ChestIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 160, 0, 16, 8));
+
+            ChestIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 176, 0, 16, 8));
+            #endregion
             #region Walls
             WallIdle.Add(new AnimationFrame(new Hitbox(32, 32, new Vector2(-8, -20)), 144, 448, 32, 32));
 

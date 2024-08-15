@@ -51,6 +51,8 @@ namespace Game_Dev.Screens
 
             new HeroDarkness(new Vector2(0, 0), new Hero(new Vector2(400, 460)));
 
+            new Chest(new Vector2(88, 416));
+
             var spikeRegions = new (int startX, int startY, int width, int height)[]
             {
                 (320, 160, 1, 1),
