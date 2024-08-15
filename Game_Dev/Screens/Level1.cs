@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Game_Dev.Characters;
 using Microsoft.Xna.Framework;
-using Game_Dev.Objects.GameObjects.Walls;
+using Game_Dev.Objects.GameObjects;
 using Game_Dev.Objects.UIElements;
 
 namespace Game_Dev.Screens

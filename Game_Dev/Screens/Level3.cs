@@ -1,5 +1,6 @@
 ﻿using Game_Dev.Characters;
 using Game_Dev.Managers;
+using Game_Dev.Objects.GameObjects;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -52,8 +53,13 @@ namespace Game_Dev.Screens
             if (entrance == 3) new Hero(new Vector2(450, 450));
             else new Hero(new Vector2(10, 140));
 
-            new Goblin(new Vector2(380, 150));
+            if (!Key.keyObtained)
+            {
+                new CaveDoor(new Vector2(576, 32));
+            }
 
+            new Goblin(new Vector2(380, 150));
+            
             new Goblin(new Vector2(550, 380));
 
             new Goblin(new Vector2(500, 250));
