@@ -1,4 +1,4 @@
-﻿using Game_Dev.Characters;
+using Game_Dev.Characters;
 using Game_Dev.Interfaces;
 using Game_Dev.Objects;
 using Game_Dev.Objects.GameObjects;
@@ -52,9 +52,14 @@ namespace Game_Dev.Managers
                 {
                     if (h1.Intersects(h2) && gameObject.isUnwalkable)
                     {
-                        if (character is Hero && gameObject is Cave)
+                        if (character is Hero)
                         {
-                            GameStateManager.NextLevel(6);
+                            if (gameObject is Cave) GameStateManager.NextLevel(6);
+                            if (gameObject is Key) 
+                            { 
+                                GameStateManager.Remove(gameObject);
+                                Key.keyObtained = true;
+                            }
                         }
 
                         if ((character is Hero && gameObject is Bomb) || (character is Bomb && gameObject is Hero) || (character is Hero && gameObject is HeroAttack))
@@ -71,7 +76,7 @@ namespace Game_Dev.Managers
                         {
                             GameStateManager.Remove(character);
                         }
-
+                      
                         return true; // Collision detected
                     }
 

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
 using Game_Dev.Managers;
-namespace Game_Dev.Objects.GameObjects.Walls
+namespace Game_Dev.Objects.GameObjects.Grass
 {
     public class GrassBottom : BaseObject
     {
