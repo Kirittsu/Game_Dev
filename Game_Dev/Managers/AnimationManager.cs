@@ -269,7 +269,7 @@ namespace Game_Dev.Managers
 
                 if (requester is HeroAttack) animatable.holdFrame = 60 / selectedList.Count;
 
-                else if (requester is Bomb) animatable.holdFrame = 90 / selectedList.Count;
+                else if (requester is Bomb) animatable.holdFrame = 150 / selectedList.Count;
 
                     else animatable.holdFrame = 30 / selectedList.Count;
             }
@@ -308,17 +308,17 @@ namespace Game_Dev.Managers
 
             HeroAttacking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 48, 48, 16, 16));
 
-            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(0, 0)), 0, 230, 16, 16));
+            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(-8, -4.5f)), 0, 230, 16, 16));
 
-            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(0, 0)), 16, 230, 16, 16));
+            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(-8, -4.5f)), 16, 230, 16, 16));
 
-            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(0, 0)), 32, 230, 16, 16));
+            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(-8, -4.5f)), 32, 230, 16, 16));
 
-            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(0, 0)), 48, 230, 16, 16));
+            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(-8, -4.5f)), 48, 230, 16, 16));
 
-            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(0, 0)), 64, 230, 16, 16));
+            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(-8, -4.5f)), 64, 230, 16, 16));
 
-            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(0, 0)), 80, 230, 16, 16));
+            HeroAttackIdle.Add(new AnimationFrame(new Hitbox(16, 9, new Vector2(-8, -4.5f)), 80, 230, 16, 16));
 
             HeroDarknessIdle.Add(new AnimationFrame(new Hitbox(0, 0, new Vector2(0, 0)), 0, 0, 1728, 1024));
             #endregion
@@ -344,13 +344,13 @@ namespace Game_Dev.Managers
 
             GoblinWalking.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 80, 0, 16, 16));
 
-            GoblinStabbing.Add(new AnimationFrame(new Hitbox(40, 16, new Vector2(0, 0)), 0, 32, 16, 16));
+            GoblinStabbing.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 0, 32, 16, 16));
 
-            GoblinStabbing.Add(new AnimationFrame(new Hitbox(40, 16, new Vector2(0, 0)), 16, 32, 16, 16));
+            GoblinStabbing.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 16, 32, 16, 16));
 
-            GoblinStabbing.Add(new AnimationFrame(new Hitbox(40, 16, new Vector2(0, 0)), 32, 32, 16, 16));
+            GoblinStabbing.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 32, 32, 16, 16));
 
-            GoblinStabbing.Add(new AnimationFrame(new Hitbox(40, 16, new Vector2(0, 0)), 48, 32, 16, 16));
+            GoblinStabbing.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 48, 32, 16, 16));
             #endregion
 
             #region GoblinBomber
@@ -374,25 +374,25 @@ namespace Game_Dev.Managers
 
             GoblinBomberThrow.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(0, 0)), 80, 0, 16, 16));
 
-            BombIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 0, 0, 8, 8));
+            BombIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(-8, -8)), 0, 0, 8, 8));
 
-            BombIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 8, 0, 8, 8));
+            BombIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(-8, -8)), 8, 0, 8, 8));
 
-            BombIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 16, 0, 8, 8));
+            BombIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(-8, -8)), 16, 0, 8, 8));
 
-            BombIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 24, 0, 8, 8));
+            BombIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(-8, -8)), 24, 0, 8, 8));
 
-            BombIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 32, 0, 8, 8));
+            BombIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(-8, -8)), 32, 0, 8, 8));
 
-            BombIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 40, 0, 8, 8));
+            BombIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(-8, -8)), 40, 0, 8, 8));
 
-            BombIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 48, 0, 8, 8));
+            BombIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(-8, -8)), 48, 0, 8, 8));
 
-            BombIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 56, 0, 8, 8));
+            BombIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(-8, -8)), 56, 0, 8, 8));
 
-            BombIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 39, 0, 1, 1));
+            BombIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(-8, -8)), 39, 0, 1, 1));
 
-            BombIdle.Add(new AnimationFrame(new Hitbox(8, 8, new Vector2(0, 0)), 39, 0, 1, 1));
+            BombIdle.Add(new AnimationFrame(new Hitbox(16, 16, new Vector2(-8, -8)), 39, 0, 1, 1));
             #endregion
 
             #region Spikes

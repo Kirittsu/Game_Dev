@@ -44,5 +44,10 @@ namespace Game_Dev.Characters
                 AttackCooldown = 0.525f;
             }
         }
+
+        public void Respawn()
+        {
+            GameStateManager.NextLevel(7);
+        }
     }
 }
