@@ -51,12 +51,35 @@ namespace Game_Dev.Screens
 
             new Hero(new Vector2(400, 460));
 
-            new Spikes(new Vector2(480, 160));
+            var spikeRegions = new (int startX, int startY, int width, int height)[]
+            {
+                (320, 160, 1, 1),
+                (480, 160, 1, 1),
+                (544, 160, 1, 1),
+                (608, 160, 1, 1),
+                (640, 256, 3, 2),
+                (768, 96, 2, 9),
+                (224, 32, 4, 2),
+                (512, 32, 3, 2)
+            };
 
-            new Spikes(new Vector2(544, 160));
-
-            new Spikes(new Vector2(608, 160));
-
+            foreach (var region in spikeRegions)
+            {
+                for (int i = 0; i < region.width; i++)
+                {
+                    for (int j = 0; j < region.height; j++)
+                    {
+                        if (region == spikeRegions[5] &&
+                           ((i == 0 && (j == 2 || j == 3)) || (i == 1 && (j == 5 || j == 6))))
+                        {
+                            continue;
+                        }
+                        float x = region.startX + (i * 32);
+                        float y = region.startY + (j * 32);
+                        new Spikes(new Vector2(x, y));
+                    }
+                }
+            }
             GameStateManager.UIToggle = false;
         }
     }
