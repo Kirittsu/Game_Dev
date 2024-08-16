@@ -14,12 +14,18 @@ using SharpDX.Direct2D1.Effects;
 
 namespace Game_Dev.Characters
 {
-    public class Hero : Character, IAnimate
+    public class Hero : Character, IAnimate, IMovement
     {
         public int currentFrameIndex { get; set; }
         public int holdFrame { get; set; }
-
         public float AttackCooldown { get; set; }
+        public float TimeRunning { get; set; }
+        public float Speed { get; set; }
+        public float SpeedCap { get; set; } = 3f;
+        public float Acceleration { get; set; } = 0.5f;
+        public float Deceleration { get; set; } = 0.3f;
+        public Character heroDarkness { get; set; }
+        public Vector2 LastDirection { get; set; } = Vector2.Zero;
 
         public Hero(Vector2 position)
         {
@@ -34,20 +40,42 @@ namespace Game_Dev.Characters
         {
             base.Update(gameTime);
 
-            AttackCooldown -= (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (Status == Status.Attacking && AttackCooldown <= 0)
             {
-                if (this.Facing.X > 0) GameStateManager.gameObjects.Add(new HeroAttack(this.MinPosition + new Vector2(Width * 1.4f, Height / 2), this.Facing, this));
-
-                else GameStateManager.gameObjects.Add(new HeroAttack(this.MinPosition + new Vector2(-Width, Height / 2), this.Facing, this));
+                Vector2 attackOffset = Facing.X > 0 ? new Vector2(Width * 1.4f, Height / 2) : new Vector2(-Width, Height / 2);
+                GameStateManager.gameObjects.Add(new HeroAttack(MinPosition + attackOffset, Facing, this));
                 AttackCooldown = 0.525f;
             }
+
+            AttackCooldown -= (float)gameTime.ElapsedGameTime.TotalSeconds;
         }
 
         public void Respawn()
         {
             AudioManager.PlayDyingSound();
             GameStateManager.NextLevel(7);
+        }
+
+        public float CalculateMove(Vector2 direction)
+        {
+            if (direction != Vector2.Zero)
+            {
+                LastDirection = direction;
+                Speed = MathHelper.Clamp(Speed + Acceleration, 0, SpeedCap);
+            }
+            else
+            {
+                Speed = MathHelper.Clamp(Speed - Deceleration, 0, SpeedCap);
+                if (Speed == 0) LastDirection = Vector2.Zero;
+            }
+            return Speed;
+        }
+
+        public void ResetMovement()
+        {
+            Speed = 0;
+            TimeRunning = 0;
+            LastDirection = Vector2.Zero;
         }
     }
 }
