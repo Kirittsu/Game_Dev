@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Game_Dev.Characters;
+using Game_Dev.Characters.Enemy;
+using Game_Dev.Characters.Player;
 using Game_Dev.Interfaces;
 using Game_Dev.Objects;
 using Microsoft.Xna.Framework;

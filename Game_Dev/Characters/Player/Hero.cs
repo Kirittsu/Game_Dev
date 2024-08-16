@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Game_Dev.Interfaces;
+﻿using Game_Dev.Interfaces;
 using Game_Dev.Managers;
-using Game_Dev.Objects;
-using Game_Dev.Objects.GameObjects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SharpDX.Direct2D1.Effects;
 
-namespace Game_Dev.Characters
+namespace Game_Dev.Characters.Player
 {
     public class Hero : Character, IAnimate
     {
@@ -37,9 +28,9 @@ namespace Game_Dev.Characters
             AttackCooldown -= (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (Status == Status.Attacking && AttackCooldown <= 0)
             {
-                if (this.Facing.X > 0) GameStateManager.gameObjects.Add(new HeroAttack(this.MinPosition + new Vector2(Width * 1.4f, Height / 2), this.Facing, this));
+                if (Facing.X > 0) GameStateManager.gameObjects.Add(new HeroAttack(MinPosition + new Vector2(Width * 1.4f, Height / 2), Facing, this));
 
-                else GameStateManager.gameObjects.Add(new HeroAttack(this.MinPosition + new Vector2(-Width, Height / 2), this.Facing, this));
+                else GameStateManager.gameObjects.Add(new HeroAttack(MinPosition + new Vector2(-Width, Height / 2), Facing, this));
                 AttackCooldown = 0.525f;
             }
         }

@@ -1,10 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Game_Dev.Characters;
 using Game_Dev.Interfaces;
 using Game_Dev.Managers;
 
-namespace Game_Dev.Objects.GameObjects
+namespace Game_Dev.Characters.Enemy
 {
     public class Spikes : Character, IAnimate
     {
@@ -58,7 +57,7 @@ namespace Game_Dev.Objects.GameObjects
             else
             {
                 // Spikes lowered
-                currentFrameIndex = 0; 
+                currentFrameIndex = 0;
             }
 
             base.Update(gameTime);

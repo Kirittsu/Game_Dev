@@ -1,15 +1,7 @@
 ﻿using Game_Dev.Managers;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework.Input;
 using Game_Dev.Objects.UIElements;
 using Microsoft.Xna.Framework;
-using Game_Dev.Characters;
-using Game_Dev.Objects.GameObjects.Walls;
 
 namespace Game_Dev.Screens
 {

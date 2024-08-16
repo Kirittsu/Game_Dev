@@ -3,7 +3,6 @@ using Game_Dev.Objects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using SharpDX.MediaFoundation;
 using System.Collections.Generic;
 
 namespace Game_Dev
@@ -34,7 +33,7 @@ namespace Game_Dev
             GameStateManager.gameElements = new List<GameElement>();
             GameStateManager.graphics = GraphicsDevice;
             GameStateManager.content = this.Content;
-            GameStateManager.LevelIndex = 6;
+            GameStateManager.LevelIndex = 0;
             GameStateManager.Font = Content.Load<SpriteFont>("Text");
 
             AnimationManager.Load();

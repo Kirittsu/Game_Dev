@@ -1,14 +1,10 @@
 ﻿using Game_Dev.Managers;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Game_Dev.Characters;
 using Microsoft.Xna.Framework;
 using Game_Dev.Objects.GameObjects;
 using Game_Dev.Objects.UIElements;
+using Game_Dev.Characters.Player;
+using Game_Dev.Objects.GameObjects.Grass;
 
 namespace Game_Dev.Screens
 {

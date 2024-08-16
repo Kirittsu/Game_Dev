@@ -1,6 +1,9 @@
 ﻿using Game_Dev.Characters;
+using Game_Dev.Characters.Enemy;
+using Game_Dev.Characters.Player;
 using Game_Dev.Managers;
 using Game_Dev.Objects.GameObjects;
+using Game_Dev.Objects.GameObjects.Grass;
 using Microsoft.Xna.Framework;
 
 namespace Game_Dev.Screens

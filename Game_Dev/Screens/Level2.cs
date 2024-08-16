@@ -1,11 +1,7 @@
-﻿using Game_Dev.Characters;
+﻿using Game_Dev.Characters.Enemy;
+using Game_Dev.Characters.Player;
 using Game_Dev.Managers;
 using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Game_Dev.Screens
 {

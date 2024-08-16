@@ -1,12 +1,9 @@
 ﻿using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Game_Dev.Characters;
-using Game_Dev.Interfaces;
+using Game_Dev.Characters.Player;
 
 namespace Game_Dev.Managers
 {
