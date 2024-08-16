@@ -58,6 +58,7 @@ namespace Game_Dev.Managers
                             if (gameObject is Key) 
                             { 
                                 GameStateManager.Remove(gameObject);
+                                AudioManager.PlayKeySound();
                                 Key.keyObtained = true;
                             }
                         }
@@ -75,6 +76,7 @@ namespace Game_Dev.Managers
                         if ((character is Goblin) && gameObject is HeroAttack)
                         {
                             GameStateManager.Remove(character);
+                            AudioManager.PlayDyingSound();
                         }
                       
                         return true; // Collision detected

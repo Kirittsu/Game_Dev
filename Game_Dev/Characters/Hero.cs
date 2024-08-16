@@ -40,13 +40,13 @@ namespace Game_Dev.Characters
                 if (this.Facing.X > 0) GameStateManager.gameObjects.Add(new HeroAttack(this.MinPosition + new Vector2(Width * 1.4f, Height / 2), this.Facing, this));
 
                 else GameStateManager.gameObjects.Add(new HeroAttack(this.MinPosition + new Vector2(-Width, Height / 2), this.Facing, this));
-
                 AttackCooldown = 0.525f;
             }
         }
 
         public void Respawn()
         {
+            AudioManager.PlayDyingSound();
             GameStateManager.NextLevel(7);
         }
     }

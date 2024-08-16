@@ -8,6 +8,7 @@ using Game_Dev.Interfaces;
 using Game_Dev.Objects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 
 namespace Game_Dev.Managers
 {
@@ -77,6 +78,23 @@ namespace Game_Dev.Managers
                 GameStateManager.loading = true;
                 GameStateManager.gameObjects.Clear();
                 GameStateManager.gameElements.Clear();
+
+                // Determine which music track to play
+                if (GameStateManager.LevelIndex == 0) // StartScreen
+                {
+                    MediaPlayer.IsMuted = false;
+                    AudioManager.PlayMusic("StartScreen");
+                }
+                else if (GameStateManager.LevelIndex == 7)
+                {
+                    MediaPlayer.IsMuted = true;
+                }
+                else
+                {
+                    MediaPlayer.IsMuted = false;
+                    AudioManager.PlayMusic("LevelMusic");
+                }
+
                 GameStateManager.CurrentScene().LoadScene(entrance);
                 GameStateManager.CurrentScene().LoadMap();
             }
