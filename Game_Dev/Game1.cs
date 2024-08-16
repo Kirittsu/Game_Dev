@@ -3,7 +3,6 @@ using Game_Dev.Objects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using SharpDX.MediaFoundation;
 using System.Collections.Generic;
 
 namespace Game_Dev

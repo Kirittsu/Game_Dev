@@ -1,14 +1,10 @@
 ﻿using Game_Dev.Managers;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Game_Dev.Characters;
 using Microsoft.Xna.Framework;
 using Game_Dev.Objects.GameObjects;
 using Game_Dev.Objects.UIElements;
+using Game_Dev.Characters.Player;
+using Game_Dev.Objects.GameObjects.Grass;
 
 namespace Game_Dev.Screens
 {
@@ -51,8 +47,8 @@ namespace Game_Dev.Screens
             { "W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","WD","W5","W5","W5","W5" }
             };
 
-            if (entrance == 4) new Hero(new Vector2(800, 300));
-            else new Hero(new Vector2(150, 300));
+            if (entrance == 4) new Hero(new Vector2(800, 330));
+            else new Hero(new Vector2(150, 330));
 
             GameStateManager.UIToggle = false;
 
