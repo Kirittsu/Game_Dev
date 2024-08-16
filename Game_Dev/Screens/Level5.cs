@@ -51,7 +51,19 @@ namespace Game_Dev.Screens
             new GoblinBomber(new Vector2(465, 290));
 
             new GoblinBomber(new Vector2(175, 230));
-            
+
+            new Goblin(new Vector2(320, 410));
+
+            for (int j = 0; j < 5; j++)
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    float x = 576 + (i * 32);
+                    float y = 130 + (j * 32);
+                    new Spikes(new Vector2(x, y));
+                }
+            }
+
             if (Key.keyObtained == false) new Key(new Vector2(32, 130));
 
             GameStateManager.UIToggle = false;
