@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
 using Game_Dev.Characters;
-using Game_Dev.Interfaces;
+using Game_Dev.Characters.Player;
 
 namespace Game_Dev.Managers
 {

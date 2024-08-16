@@ -1,12 +1,9 @@
-﻿using Game_Dev.Characters;
+﻿using Game_Dev.Characters.Enemy;
+using Game_Dev.Characters.Player;
 using Game_Dev.Managers;
-using Game_Dev.Objects.GameObjects;
+using Game_Dev.Objects.GameObjects.Dungeon;
+using Game_Dev.Objects.GameObjects.Grass;
 using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Game_Dev.Screens
 {
@@ -51,7 +48,7 @@ namespace Game_Dev.Screens
 
 
             if (entrance == 3) new Hero(new Vector2(450, 470));
-            else new Hero(new Vector2(10, 140));
+            else new Hero(new Vector2(10, 150));
 
             if (!Key.keyObtained)
             {

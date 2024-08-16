@@ -206,6 +206,12 @@
 /processorParam:TextureFormat=Compressed
 /build:Text.spritefont
 
+#begin victory.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:victory.mp3
+
 #begin youwin.png
 /importer:TextureImporter
 /processor:TextureProcessor

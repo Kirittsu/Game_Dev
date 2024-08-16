@@ -1,10 +1,9 @@
-﻿using Game_Dev.Characters;
-using Game_Dev.Interfaces;
+﻿using Game_Dev.Interfaces;
 using Game_Dev.Managers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Game_Dev.Objects.GameObjects
+namespace Game_Dev.Characters.Player
 {
     public class HeroAttack : Character, IAnimate
     {
@@ -26,7 +25,7 @@ namespace Game_Dev.Objects.GameObjects
             base.Update(gameTime);
 
             // If animation is done delete this object
-            if (this.currentFrameIndex == 5) GameStateManager.gameObjects.Remove(this);
+            if (currentFrameIndex == 5) GameStateManager.gameObjects.Remove(this);
         }
     }
 }

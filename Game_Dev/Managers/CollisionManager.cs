@@ -1,12 +1,11 @@
 using Game_Dev.Characters;
-using Game_Dev.Interfaces;
+using Game_Dev.Characters.Enemy;
+using Game_Dev.Characters.Player;
 using Game_Dev.Objects;
-using Game_Dev.Objects.GameObjects;
+using Game_Dev.Objects.GameObjects.Dungeon;
+using Game_Dev.Objects.GameObjects.Grass;
 using Microsoft.Xna.Framework;
-using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.Windows.Forms;
 
 namespace Game_Dev.Managers
 {

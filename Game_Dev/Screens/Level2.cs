@@ -1,11 +1,7 @@
-﻿using Game_Dev.Characters;
+﻿using Game_Dev.Characters.Enemy;
+using Game_Dev.Characters.Player;
 using Game_Dev.Managers;
 using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Game_Dev.Screens
 {
@@ -50,8 +46,8 @@ namespace Game_Dev.Screens
 
                 
 
-            if (entrance == 4) new Hero(new Vector2(750, 140));
-            else new Hero(new Vector2(10, 300));
+            if (entrance == 4) new Hero(new Vector2(750, 150));
+            else new Hero(new Vector2(10, 330));
 
             new Goblin(new Vector2(400, 350));
 

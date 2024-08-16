@@ -1,17 +1,12 @@
 ﻿using Game_Dev.Managers;
-using Game_Dev.Objects.GameObjects;
 using Game_Dev.Objects.GameObjects.Dungeon.CaveWalls;
 using Game_Dev.Objects.GameObjects.Dungeon.CaveFloor;
 using Game_Dev.Objects.GameObjects.Grass;
 using Game_Dev.Objects.GameObjects.Walls;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Game_Dev.Objects;
+using Game_Dev.Objects.GameObjects.Dungeon;
 
 namespace Game_Dev.Screens
 {

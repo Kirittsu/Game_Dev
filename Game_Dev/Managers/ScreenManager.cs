@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Game_Dev.Characters;
+using Game_Dev.Characters.Enemy;
+using Game_Dev.Characters.Player;
 using Game_Dev.Interfaces;
 using Game_Dev.Objects;
 using Microsoft.Xna.Framework;
@@ -85,7 +83,12 @@ namespace Game_Dev.Managers
                     MediaPlayer.IsMuted = false;
                     AudioManager.PlayMusic("StartScreen");
                 }
-                else if (GameStateManager.LevelIndex == 7)
+                else if (GameStateManager.LevelIndex == 8) // Win Screen
+                {
+                    MediaPlayer.IsMuted = false;
+                    AudioManager.PlayMusic("Victory");
+                }
+                else if (GameStateManager.LevelIndex == 7) // End Screen
                 {
                     MediaPlayer.IsMuted = true;
                 }

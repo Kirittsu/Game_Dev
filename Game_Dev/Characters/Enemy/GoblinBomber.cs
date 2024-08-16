@@ -1,16 +1,12 @@
-﻿using Game_Dev.Interfaces;
+﻿using Game_Dev.Characters.Player;
+using Game_Dev.Interfaces;
 using Game_Dev.Managers;
 using Game_Dev.Objects;
-using Game_Dev.Objects.GameObjects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Game_Dev.Characters
+namespace Game_Dev.Characters.Enemy
 {
     public class GoblinBomber : Character, IAnimate
     {
@@ -35,14 +31,14 @@ namespace Game_Dev.Characters
         {
             base.Update(gameTime);
 
-            float distanceToHero = Vector2.Distance(hero.MinPosition, this.MinPosition);
+            float distanceToHero = Vector2.Distance(hero.MinPosition, MinPosition);
 
             // Adjust the Facing direction based on the Hero's position relative to the GoblinBomber
-            if (hero.MinPosition.X > this.MinPosition.X)
+            if (hero.MinPosition.X > MinPosition.X)
             {
                 Facing = new Vector2(1, 0); // Face right
             }
-            else if (hero.MinPosition.X < this.MinPosition.X)
+            else if (hero.MinPosition.X < MinPosition.X)
             {
                 Facing = new Vector2(-1, 0); // Face left
             }
@@ -54,8 +50,8 @@ namespace Game_Dev.Characters
                 AttackCooldown -= (float)gameTime.ElapsedGameTime.TotalSeconds;
                 if (Status == Status.Attacking && AttackCooldown <= 0 && currentFrameIndex == 3)
                 {
-                    if (this.Facing.X > 0) GameStateManager.gameObjects.Add(new Bomb(this.MinPosition + new Vector2(0, 0), this, hero, gameObjects));
-                    else GameStateManager.gameObjects.Add(new Bomb(this.MinPosition + new Vector2(Width / 2, 0), this, hero, gameObjects));
+                    if (Facing.X > 0) GameStateManager.gameObjects.Add(new Bomb(MinPosition + new Vector2(0, 0), this, hero, gameObjects));
+                    else GameStateManager.gameObjects.Add(new Bomb(MinPosition + new Vector2(Width / 2, 0), this, hero, gameObjects));
 
 
                     AttackCooldown = 0.525f;
@@ -63,9 +59,9 @@ namespace Game_Dev.Characters
             }
             else
             {
-                if (this.Status != Status.Idle)
+                if (Status != Status.Idle)
                 {
-                    this.Status = Status.Idle;
+                    Status = Status.Idle;
                 }
             }
         }

@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Game_Dev.Interfaces;
+﻿using Game_Dev.Interfaces;
 using Game_Dev.Managers;
-using Game_Dev.Objects;
-using Game_Dev.Objects.GameObjects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using SharpDX.Direct2D1.Effects;
 
-namespace Game_Dev.Characters
+namespace Game_Dev.Characters.Player
 {
     public class Hero : Character, IAnimate, IMovement
     {

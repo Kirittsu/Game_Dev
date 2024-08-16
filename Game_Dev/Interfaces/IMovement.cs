@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-
 namespace Game_Dev.Interfaces
 {
     public interface IMovement

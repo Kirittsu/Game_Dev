@@ -1,6 +1,6 @@
-﻿using Game_Dev.Characters;
+﻿using Game_Dev.Characters.Enemy;
+using Game_Dev.Characters.Player;
 using Game_Dev.Managers;
-using Game_Dev.Objects.GameObjects;
 using Microsoft.Xna.Framework;
 
 namespace Game_Dev.Screens
@@ -27,7 +27,7 @@ namespace Game_Dev.Screens
 
         {"W5","W5","W6","WW","WW","WW","WW","WW","WW","G2","  ","  ","  ","  ","  ","  ","  ","  ","G5","  ","  ","  ","G2","G2","WW","W7","W8"},
 
-        {"W5","W5","W9","WW","WW","WW","G2","G2","G2","  ","  ","  ","  ","  ","G5","  ","  ","  ","  ","  ","  ","  ","  ","  ","G2","WW","WW"},
+        {"W8","W8","W9","WW","WW","WW","G2","G2","G2","  ","  ","  ","  ","  ","G5","  ","  ","  ","  ","  ","  ","  ","  ","  ","G2","WW","WW"},
 
         {"WW","WW","WW","G2","G2","G2","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","  ","W4","W5"},
 

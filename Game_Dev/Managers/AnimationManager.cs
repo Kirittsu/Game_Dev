@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Game_Dev.Characters;
+﻿using System.Collections.Generic;
 using Game_Dev.Interfaces;
 using Game_Dev.Objects;
-using Game_Dev.Objects.GameObjects;
 using Game_Dev.Objects.GameObjects.Dungeon.CaveWalls;
-using Game_Dev.Objects.GameObjects.Dungeon.CaveFloor ;
+using Game_Dev.Objects.GameObjects.Dungeon.CaveFloor;
 using Game_Dev.Objects.GameObjects.Grass;
 using Game_Dev.Objects.GameObjects.Walls;
 using Microsoft.Xna.Framework;
+using Game_Dev.Characters.Enemy;
+using Game_Dev.Objects.GameObjects.Dungeon;
+using Game_Dev.Characters.Player;
 
 namespace Game_Dev.Managers
 {

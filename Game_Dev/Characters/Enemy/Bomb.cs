@@ -1,16 +1,11 @@
-﻿using Game_Dev.Characters;
-using Game_Dev.Interfaces;
+﻿using Game_Dev.Interfaces;
 using Game_Dev.Managers;
+using Game_Dev.Objects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace Game_Dev.Objects.GameObjects
+namespace Game_Dev.Characters.Enemy
 {
     public class Bomb : Character, IAnimate
     {
@@ -29,7 +24,7 @@ namespace Game_Dev.Objects.GameObjects
             scale = 2;
             isUnwalkable = false;
             DrawOrder = 4;
-            this.initialTargetPosition = target.MinPosition + new Vector2(target.Width / 4, target.Height - (target.Height / 4)); // Store the initial target position
+            initialTargetPosition = target.MinPosition + new Vector2(target.Width / 4, target.Height - target.Height / 4); // Store the initial target position
             this.gameObjects = gameObjects;
         }
 
@@ -37,25 +32,25 @@ namespace Game_Dev.Objects.GameObjects
         {
             base.Update(gameTime);
 
-            float distanceToTarget = Vector2.Distance(initialTargetPosition, this.MinPosition);
+            float distanceToTarget = Vector2.Distance(initialTargetPosition, MinPosition);
 
             if (distanceToTarget > 0)
             {
-                Vector2 direction = initialTargetPosition - this.MinPosition;
+                Vector2 direction = initialTargetPosition - MinPosition;
                 direction.Normalize();
                 direction *= 2f; // Adjust speed as needed
                 direction = CollisionManager.MovementCollisionChecks(this, direction, gameObjects);
 
-                this.MinPosition += direction;
+                MinPosition += direction;
             }
 
-            if (this.currentFrameIndex == 8)
+            if (currentFrameIndex == 8)
             {
                 isExploded = true;
             }
 
             // If animation is done, delete this object
-            if (this.currentFrameIndex == 9)
+            if (currentFrameIndex == 9)
             {
                 GameStateManager.gameObjects.Remove(this);
             }
