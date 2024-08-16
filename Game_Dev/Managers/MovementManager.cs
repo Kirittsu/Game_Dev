@@ -9,7 +9,7 @@ namespace Game_Dev.Managers
 {
     public static class MovementManager
     {
-        private static Vector2 snelheid = new Vector2(1, 1);
+        private static Vector2 speed = new Vector2(1, 1);
 
         public static void Move(Character character, GameTime gameTime)
         {
@@ -41,14 +41,12 @@ namespace Game_Dev.Managers
 
                     else character.Status = Status.Walking;
                 }
-            }
 
-            snelheid.Normalize();
-            direction *= snelheid;
+                speed.Normalize();
+                direction *= speed;
 
-            Vector2 facing = character.Facing;
+                Vector2 facing = character.Facing;
 
-            if (character is Hero) {
                 if (direction.X != 0) facing.X = direction.X;
 
                 character.Facing = facing;
