@@ -45,7 +45,9 @@ namespace Game_Dev.Screens
             {"C2","C2","C2","C2","C2","C2","C2","CV","CV","CV","CV","T1","T2","T2","T3","CV","CV","CV","CV","C5","C5","C5","C5","C5","C5","C5","C5"}
             };
 
-            new HeroDarkness(new Vector2(0, 0), new Hero(new Vector2(400, 460)));
+            Hero hero = new Hero(new Vector2(400, 460));
+            HeroDarkness heroDarkness = new HeroDarkness(hero.MinPosition, hero);
+            hero.heroDarkness = heroDarkness;
 
             new Chest(new Vector2(88, 416));
 
@@ -57,7 +59,7 @@ namespace Game_Dev.Screens
                 (608, 160, 1, 1),
                 (640, 256, 3, 2),
                 (768, 96, 2, 9),
-                (224, 32, 4, 2),
+                (224, 32, 5, 2),
                 (512, 32, 3, 2)
             };
 

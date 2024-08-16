@@ -1,13 +1,14 @@
-﻿namespace Game_Dev.Interfaces
+﻿using Microsoft.Xna.Framework;
+namespace Game_Dev.Interfaces
 {
     public interface IMovement
     {
-        public IInput Input { get; set; }
-        public float TimeRunning { get; set; }
-        public float Speed { get; set; }
-        public float SpeedCap { get; set; }
-        public float Acceleration { get; set; }
-        public float CalculateMove();
-        public void ResetMovement();
+        float TimeRunning { get; set; }
+        float Speed { get; set; }
+        float SpeedCap { get; set; }
+        float Acceleration { get; set; }
+        float Deceleration { get; set; }
+        float CalculateMove(Vector2 direction);
+        void ResetMovement();
     }
 }

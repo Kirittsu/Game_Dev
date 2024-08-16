@@ -1,6 +1,4 @@
 ﻿using Microsoft.Xna.Framework.Input;
-using System;
-using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Game_Dev.Characters;
 using Game_Dev.Characters.Player;
@@ -9,58 +7,56 @@ namespace Game_Dev.Managers
 {
     public static class MovementManager
     {
-        private static Vector2 speed = new Vector2(1, 1);
-
         public static void Move(Character character, GameTime gameTime)
         {
-            KeyboardState state = Keyboard.GetState();
+            if (character is not Hero hero) return;
 
+            Vector2 direction = GetMovementDirection();
+
+            // Apply acceleration, deceleration, and movement
+            float speed = hero.CalculateMove(direction);
+            direction = direction != Vector2.Zero ? direction : hero.LastDirection;
+            direction *= speed;
+
+            if (direction.X != 0) character.Facing = new Vector2(direction.X, character.Facing.Y);
+            direction = CollisionManager.MovementCollisionChecks(character, direction, GameStateManager.gameObjects);
+            character.MinPosition += direction;
+
+            UpdateHeroDarkness(hero);
+            UpdateHeroStatus(character, direction);
+        }
+
+        private static Vector2 GetMovementDirection()
+        {
             var direction = Vector2.Zero;
+            var state = Keyboard.GetState();
 
+            if (state.IsKeyDown(Keys.Left)) direction.X -= 1f;
+            if (state.IsKeyDown(Keys.Right)) direction.X += 1f;
+            if (state.IsKeyDown(Keys.Up)) direction.Y -= 1f;
+            if (state.IsKeyDown(Keys.Down)) direction.Y += 1f;
 
-            if (character is Hero)
-            {
-                if (state.IsKeyDown(Keys.Left)) direction.X -= 3.5f;
+            return direction != Vector2.Zero ? Vector2.Normalize(direction) : Vector2.Zero;
+        }
 
-                if (state.IsKeyDown(Keys.Right)) direction.X += 3.5f;
+        private static void UpdateHeroDarkness(Hero hero)
+        {
+            if (hero.heroDarkness == null) return;
 
-                if (state.IsKeyDown(Keys.Up)) direction.Y -= 3.5f;
+            var offset = new Vector2(hero.heroDarkness.Texture.Width / 2 - hero.Width / 2, hero.heroDarkness.Texture.Height / 2 - hero.Height / 2);
+            hero.heroDarkness.MinPosition = hero.MinPosition - offset;
+        }
 
-                if (state.IsKeyDown(Keys.Down)) direction.Y += 3.5f;
+        private static void UpdateHeroStatus(Character character, Vector2 direction)
+        {
+            var state = Keyboard.GetState();
 
-                if (direction.X == 0 && direction.Y == 0)
-                {
-                    if (state.IsKeyDown(Keys.C)) character.Status = Status.Attacking;
-
-                    else character.Status = Status.Idle;
-                }
-
-                else
-                {
-                    if (state.IsKeyDown(Keys.C)) character.Status = Status.Attacking;
-
-                    else character.Status = Status.Walking;
-                }
-
-                speed.Normalize();
-                direction *= speed;
-
-                Vector2 facing = character.Facing;
-
-                if (direction.X != 0) facing.X = direction.X;
-
-                character.Facing = facing;
-
-                direction = CollisionManager.MovementCollisionChecks(character, direction, GameStateManager.gameObjects);
-
-                //apply everything
-                character.MinPosition += direction;
-            }
-
-            if (character is HeroDarkness darkness)
-            {
-                darkness.MinPosition = darkness.hero.MinPosition - new Vector2(840, 510);
-            }
+            if (state.IsKeyDown(Keys.C))
+                character.Status = Status.Attacking;
+            else if (direction != Vector2.Zero)
+                character.Status = Status.Walking;
+            else
+                character.Status = Status.Idle;
         }
     }
 }
