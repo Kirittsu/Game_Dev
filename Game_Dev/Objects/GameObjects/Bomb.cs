@@ -28,6 +28,7 @@ namespace Game_Dev.Objects.GameObjects
             Origin = origin;
             scale = 2;
             isUnwalkable = false;
+            DrawOrder = 4;
             this.initialTargetPosition = target.MinPosition + new Vector2(target.Width / 4, target.Height - (target.Height / 4)); // Store the initial target position
             this.gameObjects = gameObjects;
         }

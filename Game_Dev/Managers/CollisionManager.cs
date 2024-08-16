@@ -64,6 +64,8 @@ namespace Game_Dev.Managers
                             }
                         }
 
+                        if (character is Bomb) return false;
+
                         if ((character is Hero && gameObject is Bomb) || (character is Bomb && gameObject is Hero) || (character is Hero && gameObject is HeroAttack))
                         {
                             return false;
@@ -130,7 +132,7 @@ namespace Game_Dev.Managers
                     }
                 }
 
-                if (character is Hero hero && h1.Intersects(h2))
+                if (character is Hero hero && h1.Intersects(h2) && !GameStateManager.loading)
                 {
                     if (gameObject is Spikes spikes && spikes.isExtended)
                     {

@@ -19,7 +19,7 @@ namespace Game_Dev.Characters
 
         public float AttackCooldown { get; set; }
 
-        private float attackRange = 200f;
+        private float attackRange = 400f;
 
         public GoblinBomber(Vector2 position)
         {
@@ -27,7 +27,7 @@ namespace Game_Dev.Characters
             MinPosition = position;
             Texture = GameStateManager.content.Load<Texture2D>("goblinBomber");
             Facing = new Vector2(1, 0);
-            DrawOrder = 2;
+            DrawOrder = 4;
             isUnwalkable = false;
         }
 
