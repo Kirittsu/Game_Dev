@@ -47,6 +47,7 @@ namespace Game_Dev
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+            AudioManager.LoadContent(Content);
         }
 
         protected override void Update(GameTime gameTime)
