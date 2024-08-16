@@ -34,7 +34,7 @@ namespace Game_Dev
             GameStateManager.gameElements = new List<GameElement>();
             GameStateManager.graphics = GraphicsDevice;
             GameStateManager.content = this.Content;
-            GameStateManager.LevelIndex = 1;
+            GameStateManager.LevelIndex = 0;
             GameStateManager.Font = Content.Load<SpriteFont>("Text");
 
             AnimationManager.Load();

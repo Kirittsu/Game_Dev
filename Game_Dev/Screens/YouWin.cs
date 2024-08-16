@@ -11,13 +11,11 @@ using Microsoft.Xna.Framework;
 
 namespace Game_Dev.Screens
 {
-    public class EndScreen : BaseScene
+    public class YouWin : BaseScene
     {
         public override void LoadScene(int entrance)
         {
-            Background = GameStateManager.content.Load<Texture2D>("gameover");
-            GameStateManager.UIToggle = true;
-            new Text(new Vector2(240, 425), "Press Spacebar to Continue", Color.Black);
+            Background = GameStateManager.content.Load<Texture2D>("youwin");
         }
     }
 }
