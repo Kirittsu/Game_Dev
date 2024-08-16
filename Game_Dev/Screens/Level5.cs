@@ -1,8 +1,6 @@
-﻿using Game_Dev.Characters;
-using Game_Dev.Characters.Enemy;
+﻿using Game_Dev.Characters.Enemy;
 using Game_Dev.Characters.Player;
 using Game_Dev.Managers;
-using Game_Dev.Objects.GameObjects;
 using Game_Dev.Objects.GameObjects.Grass;
 using Microsoft.Xna.Framework;
 
@@ -55,7 +53,9 @@ namespace Game_Dev.Screens
 
             new GoblinBomber(new Vector2(175, 230));
 
-            new Goblin(new Vector2(320, 410));
+            new Goblin(new Vector2(352, 416));
+
+            new Goblin(new Vector2(176, 366));
 
             for (int j = 0; j < 5; j++)
             {
