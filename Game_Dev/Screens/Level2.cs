@@ -50,8 +50,8 @@ namespace Game_Dev.Screens
 
                 
 
-            if (entrance == 4) new Hero(new Vector2(750, 140));
-            else new Hero(new Vector2(10, 300));
+            if (entrance == 4) new Hero(new Vector2(750, 150));
+            else new Hero(new Vector2(10, 330));
 
             new Goblin(new Vector2(400, 350));
 

@@ -51,8 +51,8 @@ namespace Game_Dev.Screens
             { "W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","W5","WD","W5","W5","W5","W5" }
             };
 
-            if (entrance == 4) new Hero(new Vector2(800, 300));
-            else new Hero(new Vector2(150, 300));
+            if (entrance == 4) new Hero(new Vector2(800, 330));
+            else new Hero(new Vector2(150, 330));
 
             GameStateManager.UIToggle = false;
 
