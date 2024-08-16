@@ -22,6 +22,7 @@ namespace Game_Dev.Managers
         {
             _musicTracks["StartScreen"] = content.Load<Song>("startscreen");
             _musicTracks["LevelMusic"] = content.Load<Song>("level");
+            _musicTracks["Victory"] = content.Load<Song>("victory");
             _slashSound = content.Load<SoundEffect>("slash");
             _dyingSound = content.Load<SoundEffect>("dying");
             _PlayKeySound = content.Load<SoundEffect>("keyGet");
@@ -36,6 +37,7 @@ namespace Game_Dev.Managers
             {
                 _currentTrackName = trackName;
                 MediaPlayer.Play(_musicTracks[trackName]);
+                SoundEffect.MasterVolume = 0.2f;
                 MediaPlayer.Volume = 0.2f;
                 MediaPlayer.IsRepeating = true;
             }

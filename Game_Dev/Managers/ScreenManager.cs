@@ -85,7 +85,12 @@ namespace Game_Dev.Managers
                     MediaPlayer.IsMuted = false;
                     AudioManager.PlayMusic("StartScreen");
                 }
-                else if (GameStateManager.LevelIndex == 7)
+                else if (GameStateManager.LevelIndex == 8) // Win Screen
+                {
+                    MediaPlayer.IsMuted = false;
+                    AudioManager.PlayMusic("Victory");
+                }
+                else if (GameStateManager.LevelIndex == 7) // End Screen
                 {
                     MediaPlayer.IsMuted = true;
                 }
