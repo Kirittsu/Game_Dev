@@ -1,15 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Game_Dev.Managers;
 namespace Game_Dev.Objects.GameObjects.Walls
 {
-    public class WallTopRight : BaseObject
+    public class WallTopRight : Tile
     {
-        public WallTopRight(Vector2 position)
+        public WallTopRight(Vector2 position) : base(position, true, "grassTiles") 
         {
-            this.MinPosition = position;
-            this.Texture = GameStateManager.content.Load<Texture2D>("grassTiles"); // Load the texture here
-            Facing = new Vector2(1, 0);
             DrawOrder = 3;
         }
     }

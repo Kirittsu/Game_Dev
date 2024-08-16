@@ -8,7 +8,6 @@ namespace Game_Dev.Characters
     public abstract class Character : BaseObject
     {
         public IMovement Movement { get; set; }
-        public int Weight { get; set; }
 
         public virtual void Update(GameTime gameTime)
         {
