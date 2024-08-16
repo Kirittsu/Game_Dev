@@ -3,11 +3,6 @@ using Game_Dev.Interfaces;
 using Game_Dev.Managers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Game_Dev.Objects.GameObjects
 {
@@ -17,12 +12,13 @@ namespace Game_Dev.Objects.GameObjects
         public int currentFrameIndex { get; set; }
         public int holdFrame { get; set; }
 
-        public HeroAttack (Vector2 position, Vector2 facing, Character origin)
+        public HeroAttack(Vector2 position, Vector2 facing, Character origin)
         {
             Texture = GameStateManager.content.Load<Texture2D>("hero");
             MinPosition = position;
             Origin = origin;
             Facing = facing;
+            AudioManager.PlaySlashSound();
         }
 
         public override void Update(GameTime gameTime)
