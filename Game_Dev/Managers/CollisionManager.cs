@@ -55,6 +55,7 @@ namespace Game_Dev.Managers
                         if (character is Hero)
                         {
                             if (gameObject is Cave) GameStateManager.NextLevel(6);
+                            if (gameObject is Chest) GameStateManager.NextLevel(8);
                             if (gameObject is Key) 
                             { 
                                 GameStateManager.Remove(gameObject);
