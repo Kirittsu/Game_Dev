@@ -36,7 +36,7 @@ namespace Game_Dev.Managers
             {
                 _currentTrackName = trackName;
                 MediaPlayer.Play(_musicTracks[trackName]);
-                MediaPlayer.Volume = 0.6f;
+                MediaPlayer.Volume = 0.2f;
                 MediaPlayer.IsRepeating = true;
             }
         }
